@@ -1,10 +1,10 @@
-ul li a{
+  ul li a{
     color: #FF00FF;
-}
-.nav-link{
+  }
+  .nav-link{
     color: #FF00FF;
-}
-.flip-card {
+  }
+  .flip-card {
     width: 400px;
     height: 400px;
     perspective: 1000px;
@@ -37,7 +37,6 @@ ul li a{
   }
   
   .flip-card-back {
-   
-text-align: justify;
+    text-align: justify;
     transform: rotateY(180deg);
   }
