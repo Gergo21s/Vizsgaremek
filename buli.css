@@ -1,47 +1,9 @@
-h3{
-    text-align: center;
-}
-
-.lh{
-    line-height: 150px;  
-}
-.lhh{
-    line-height: 50px;
-    
-}
-
-#hatter{
-    background-color: black;
-    color: #FF00FF;
-}
-.kerdes{
-    text-align: left;
-}
-.racs{
-    border: 1px solid #FF00FF;
-}
-.nyil{
-    float: right;
-}
 ul li a{
     color: #FF00FF;
 }
 .nav-link{
     color: #FF00FF;
 }
-.igazit{
-    text-align: justify;
-}
-.kepek{
-    border-radius: 50%;
-}
-.cimke{
-    text-align: center;
- font-weight: bold;
-
-}
-
-
 .flip-card {
     width: 400px;
     height: 400px;
