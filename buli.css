@@ -40,3 +40,17 @@
     text-align: justify;
     transform: rotateY(180deg);
   }
+  .urlap
+  {
+    
+    width: 800px;
+    height: 1000px;
+    border: 1px solid #FF00FF;
+    border-radius: 30px;
+    margin-left: 850px;
+  }
+  .urlapp
+  {
+    text-decoration-line:none;
+    color: #FF00FF;
+  }
