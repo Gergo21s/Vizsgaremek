@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col"
+         ng-repeat="x in data track by $index">
+      <div class="card" style="width: 18rem;">
+        <img ng-src="./img/uj/{{x.img}}" 
+             class="card-img-top" alt="..." 
+             data-bs-toggle="modal" 
+             data-bs-target="#buli1modal">
+        <div class="card-body" style="background-color: black; color:#FF00FF;">
+          <div>
+            <span style="float: left; font-weight: bold;">Időpont</span><br>
+            <span>{{x.date}}</span><br>
+            <span>{{x.time}}</span>
+          </div>
+          <div>
+            <span style="float: left; font-weight: bold;">Jegyek</span><br>
+            <span>{{x.price}}</span><br>
+            <span>{{x.description}}</span>
+          </div>
+          <a href="#" class="btn btn-outline-dark" 
+             style="background-color:  #FF00FF; color:black;">
+            Asztalfoglalás
+          </a><br><br>
+          <a href="#" class="btn btn-outline-dark"  
+             style="background-color:  #FF00FF; color:black;">
+            Jegyvásárlás
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

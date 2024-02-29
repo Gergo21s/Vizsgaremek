@@ -35,29 +35,32 @@
 				templateUrl: './html/home.html',
 				controller: 'homeController'
 			})
-			.state('reservation', {
-				url: '/reservation',
+			.state('asztalfoglalas', {
+				url: '/asztalfoglalas',
 				parent: 'root',
-				templateUrl: './html/reservation.html',
-				controller: 'reservationController'
+				templateUrl: './html/asztalfoglalas.html',
+				controller: 'asztalfoglalasController'
 			})
-			.state('programmes', {
-				url: '/programmes',
+			.state('programok', {
+				url: '/programok',
 				parent: 'root',
-				templateUrl: './html/programmes.html',
-				controller: 'programmesController'
+				templateUrl: './html/programok.html',
+				controller: 'programokController'
 			})
-			.state('promoters', {
-				url: '/promoters',
+			.state('promoterek', {
+				url: '/promoterek',
 				parent: 'root',
-				templateUrl: './html/promoters.html',
-				controller: 'promotersController'
+				templateUrl: './html/uder_construction.html'
 			})
-			.state('relationship', {
-				url: '/relationship',
+			.state('kapcsolat', {
+				url: '/kapcsolat',
 				parent: 'root',
-				templateUrl: './html/relationship.html',
-				controller: 'relationshipController'
+				templateUrl: './html/uder_construction.html'
+			})
+			.state('urlap', {
+				url: '/urlap',
+				parent: 'root',
+				templateUrl: './html/uder_construction.html'
 			});
 			
       $urlRouterProvider.otherwise('/');
@@ -82,35 +85,41 @@
 		}
 	])
 
-	// Reservation controller
-  .controller('reservationController', [
+	// Asztalfoglalás controller
+  .controller('asztalfoglalasController', [
     '$scope',
-    function($scope) {
-			console.log('Reservation controller...');
+		'$timeout',
+		'http',
+    function($scope, $timeout, http) {
+			
+			// Get data
+			http.request('./data/asztalfoglalas.json')
+			.then(response => {
+
+				// Set data, and apply change
+				$scope.data = response;
+				$scope.$applyAsync();
+			})
+			.catch(e => $timeout(() => { alert(e); }, 50));
 		}
 	])
-
-	// Programmes controller
-  .controller('programmesController', [
+	
+	// Programok controller
+  .controller('programokController', [
     '$scope',
-    function($scope) {
-			console.log('Programmes controller...');
-		}
-	])
+		'$timeout',
+		'http',
+    function($scope, $timeout, http) {
+			
+			// Get data
+			http.request('./data/programok.json')
+			.then(response => {
 
-	// Promoters controller
-  .controller('promotersController', [
-    '$scope',
-    function($scope) {
-			console.log('Promoters controller...');
-		}
-	])
-
-	// Relationship controller
-  .controller('relationshipController', [
-    '$scope',
-    function($scope) {
-			console.log('Relationship controller...');
+				// Set data, and apply change
+				$scope.data = response;
+				$scope.$applyAsync();
+			})
+			.catch(e => $timeout(() => { alert(e); }, 50));
 		}
 	]);
 

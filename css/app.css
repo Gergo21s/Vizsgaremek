@@ -1,9 +1,24 @@
+.text-color-pink {
+	color: #FF00FF;
+}
+
+.page-container {
+	background-color: black; 
+	color: #FF00FF
+}
+.navbar .nav-item a.active,
+footer a.nav-link.active {
+	color: #FF00FF;
+	text-decoration: underline;
+}
+/*
 ul li a{
 	color: #FF00FF;
 }
 .nav-link{
 	color: #FF00FF;
 }
+*/
 .flip-card {
 	width: 400px;
 	height: 400px;
@@ -37,7 +52,6 @@ ul li a{
 }
 
 .flip-card-back {
- 
-text-align: justify;
+	text-align: justify;
 	transform: rotateY(180deg);
 }
