@@ -7,59 +7,59 @@
     "description": "Normál jegy(soron kívüli bejutással)"
   },
   {
-    "img": "",
-    "date": "",
-    "time": "",
-    "price": "",
-    "description": ""
+    "img": "kep2_meret.png",
+    "date": "05.12 Vasárnap",
+    "time": "20:00-04:00",
+    "price": "5000Ft-tól",
+    "description": "Normál jegy(soron kívüli bejutással)"
   },
   {
-    "img": "",
-    "date": "",
-    "time": "",
-    "price": "",
-    "description": ""
+    "img": "kep3_meret.png",
+    "date": "05.22 Szerda",
+    "time": "22:00-06:00",
+    "price": "3500Ft-tól",
+    "description": "Normál jegy(soron kívüli bejutással)"
   },
   {
-    "img": "",
-    "date": "",
-    "time": "",
-    "price": "",
-    "description": ""
+    "img": "kep4_meret.png",
+    "date": "05.30 Csütörtök",
+    "time": "22:00-05:00",
+    "price": "3200Ft-tól",
+    "description": "Normál jegy(soron kívüli bejutással)"
   },
   {
-    "img": "",
-    "date": "",
-    "time": "",
-    "price": "",
-    "description": ""
+    "img": "kep5_meret.png",
+    "date": "06.02 Vasárnap",
+    "time": "23:00-04:00",
+    "price": "4000Ft-tól",
+    "description": "Normál jegy(soron kívüli bejutással)"
   },
   {
-    "img": "",
-    "date": "",
-    "time": "",
-    "price": "",
-    "description": ""
+    "img": "kep6_meret.png",
+    "date": "06.12 Szerda",
+    "time": "22:00-03:00",
+    "price": "4200Ft-tól",
+    "description": "Normál jegy(soron kívüli bejutással)"
   },
   {
-    "img": "",
-    "date": "",
-    "time": "",
-    "price": "",
-    "description": ""
+    "img": "kep7_meret.png",
+    "date": "06.20 Csütörtök",
+    "time": "22:00-05:00",
+    "price": "4500Ft-tól",
+    "description": "Normál jegy(soron kívüli bejutással)"
   },
   {
-    "img": "",
-    "date": "",
-    "time": "",
-    "price": "",
-    "description": ""
+    "img": "kep8_meret.png",
+    "date": "07.01 Hétfő",
+    "time": "20:00-03:00",
+    "price": "3000Ft-tól",
+    "description": "Normál jegy(soron kívüli bejutással)"
   },
   {
-    "img": "",
-    "date": "",
-    "time": "",
-    "price": "",
-    "description": ""
+    "img": "kep9_meret.png",
+    "date": "07.13 Szombat",
+    "time": "20:00-04:30 ",
+    "price": "4500Ft-tól",
+    "description": "Normál jegy(soron kívüli bejutással)"
   }
 ]
