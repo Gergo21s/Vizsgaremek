@@ -50,7 +50,8 @@
 			.state('promoterek', {
 				url: '/promoterek',
 				parent: 'root',
-				templateUrl: './html/uder_construction.html'
+				templateUrl: './html/promoterek.html',
+				controller: 'promoterekController'
 			})
 			.state('kapcsolat', {
 				url: '/kapcsolat',
@@ -121,6 +122,26 @@
 			})
 			.catch(e => $timeout(() => { alert(e); }, 50));
 		}
-	]);
+	])
+	
+	
+		// Promoterek controller
+	.controller('promoterekController', [
+		'$scope',
+			'$timeout',
+			'http',
+		function($scope, $timeout, http) {
+				
+				// Get data
+				http.request('./data/promoterek.json')
+				.then(response => {
+	
+					// Set data, and apply change
+					$scope.data = response;
+					$scope.$applyAsync();
+				})
+				.catch(e => $timeout(() => { alert(e); }, 50));
+			}
+		]);
 
 })(window, angular);
