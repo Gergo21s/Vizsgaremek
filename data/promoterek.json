@@ -2,38 +2,38 @@
 {
     "img": "promoter8.png",
     "name":"Kányási Evelin",
-    "mail":"fasztudja@gmail.com",
-    "phone":"+36705230972"
+    "mail":"kanyasi-evi@gmail.com",
+    "phone":"+36305030900"
 },
 {
     "img": "füles.PNG",
     "name":"Vörös Alexandra",
-    "mail":"fasztudja@gmail.com",
-    "phone":"+36705230972"
+    "mail":"voros_alexandra@gmail.com",
+    "phone":"+36703080442"
 },
 {
     "img": "promoter2.1.PNG",
     "name":"Burunkai Bernadett",
-    "mail":"fasztudja@gmail.com",
-    "phone":"+36705230972"
+    "mail":"berni21@gmail.com",
+    "phone":"+36203456789"
 },
 {
     "img": "promoter2.2.PNG",
     "name":"Papp Zsófia",
-    "mail":"fasztudja@gmail.com",
-    "phone":"+36705230972"
+    "mail":"zsofia_papp99@gmail.com",
+    "telefonszám":"+36306633905"
 },
 {
     "img": "promoter2.3.PNG",
     "name":"Füredi Zsanett",
-    "mail":"fasztudja@gmail.com",
-    "phone":"+36705230972"
+    "mail":"zsnai45@gmail.com",
+    "telefonszám":"+36305260011"
 },
 {
     "img": "promoter2.4.PNG",
     "name":"Rab Dorottya",
-    "mail":"fasztudja@gmail.com",
-    "phone":"+36705230972"
+    "mail":"dorcsi_rab@gmail.com",
+    "telefonszám":"+36203330156"
 },
 {
     "img": "promoter2.5.PNG",
@@ -50,7 +50,13 @@
 {
     "img": "anyu.PNG",
     "name":"Ercsu",
-    "mail":"ercsu@gmail.com",
-    "phone":"+36705230972"
+    "mail":"borcsokbarbi@gmail.com",
+    "telefonszám":"+36304567221"
+},
+{
+    "img": "promoter2.0_meret-min.PNG",
+    "name":"Faludi Andi",
+    "mail":"andrea_faludi@gmail.com",
+    "telefonszám":"+36203230129"
 }
 ]

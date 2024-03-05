@@ -62,6 +62,7 @@
 				url: '/urlap',
 				parent: 'root',
 				templateUrl: './html/uder_construction.html'
+				
 			});
 			
       $urlRouterProvider.otherwise('/');
