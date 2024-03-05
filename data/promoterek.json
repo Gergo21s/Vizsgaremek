@@ -1,34 +1,50 @@
 [
 {
     "img": "promoter8_meret-min.png",
-    "name":"Kányási Evelin"
+    "name":"Kányási Evelin",
+    "emai":"fasztudja@gmail.com",
+    "telefonszám":"+36705230972"
 },
 {
     "img": "füles_meret-min.PNG",
-    "name":"Vörös Alexandra"
+    "name":"Vörös Alexandra",
+    "emai":"fasztudja@gmail.com",
+    "telefonszám":"+36705230972"
 },
 {
     "img": "promoter2.1_meret-min.PNG",
-    "name":"Burunkai Bernadett"
+    "name":"Burunkai Bernadett",
+    "emai":"fasztudja@gmail.com",
+    "telefonszám":"+36705230972"
 },
 {
     "img": "promoter2.2_meret-min.PNG",
-    "name":"Papp Zsófia"
+    "name":"Papp Zsófia",
+    "emai":"fasztudja@gmail.com",
+    "telefonszám":"+36705230972"
 },
 {
     "img": "promoter2.3_meret-min.PNG",
-    "name":"Füredi Zsanett"
+    "name":"Füredi Zsanett",
+    "emai":"fasztudja@gmail.com",
+    "telefonszám":"+36705230972"
 },
 {
     "img": "promoter2.4_meret-min (1).PNG",
-    "name":"Rab Dorottya"
+    "name":"Rab Dorottya",
+    "emai":"fasztudja@gmail.com",
+    "telefonszám":"+36705230972"
 },
 {
     "img": "promoter2.5_meret-min.PNG",
-    "name":"Börcsök Barbara"
+    "name":"Börcsök Barbara",
+    "emai":"fasztudja@gmail.com",
+    "telefonszám":"+36705230972"
 },
 {
     "img": "promoter2.0_meret-min.PNG",
-    "name":"Faludi Andii"
+    "name":"Faludi Andii",
+    "emai":"fasztudja@gmail.com",
+    "telefonszám":"+36705230972"
 }
 ]
