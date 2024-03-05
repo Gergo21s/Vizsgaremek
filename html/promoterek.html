@@ -9,9 +9,11 @@
 
 <div class="container" >
     <div class="row mt-5" ng-repeat="x in data track by $index">
+      <div class="col-md-4" >
+     <img ng-src="./img/promoter/kész/"{{x.img}}  alt="" style="border-radius: 50%;" > 
+      </div>  
       
-
-      <div class="col-lg-6 col-md-4">
+      <div class="col-md-4">
        <img src="./img/promoter/kész/{{x.img}}" style="border-radius: 50%;"> {{x.name}}
       </div>
     </div>
