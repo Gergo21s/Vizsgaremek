@@ -1,50 +1,56 @@
 [
 {
-    "img": "promoter8_meret-min.png",
+    "img": "promoter8.png",
     "name":"Kányási Evelin",
-    "emai":"fasztudja@gmail.com",
-    "telefonszám":"+36705230972"
+    "mail":"fasztudja@gmail.com",
+    "phone":"+36705230972"
 },
 {
-    "img": "füles_meret-min.PNG",
+    "img": "füles.PNG",
     "name":"Vörös Alexandra",
-    "emai":"fasztudja@gmail.com",
-    "telefonszám":"+36705230972"
+    "mail":"fasztudja@gmail.com",
+    "phone":"+36705230972"
 },
 {
-    "img": "promoter2.1_meret-min.PNG",
+    "img": "promoter2.1.PNG",
     "name":"Burunkai Bernadett",
-    "emai":"fasztudja@gmail.com",
-    "telefonszám":"+36705230972"
+    "mail":"fasztudja@gmail.com",
+    "phone":"+36705230972"
 },
 {
-    "img": "promoter2.2_meret-min.PNG",
+    "img": "promoter2.2.PNG",
     "name":"Papp Zsófia",
-    "emai":"fasztudja@gmail.com",
-    "telefonszám":"+36705230972"
+    "mail":"fasztudja@gmail.com",
+    "phone":"+36705230972"
 },
 {
-    "img": "promoter2.3_meret-min.PNG",
+    "img": "promoter2.3.PNG",
     "name":"Füredi Zsanett",
-    "emai":"fasztudja@gmail.com",
-    "telefonszám":"+36705230972"
+    "mail":"fasztudja@gmail.com",
+    "phone":"+36705230972"
 },
 {
-    "img": "promoter2.4_meret-min (1).PNG",
+    "img": "promoter2.4.PNG",
     "name":"Rab Dorottya",
-    "emai":"fasztudja@gmail.com",
-    "telefonszám":"+36705230972"
+    "mail":"fasztudja@gmail.com",
+    "phone":"+36705230972"
 },
 {
-    "img": "promoter2.5_meret-min.PNG",
+    "img": "promoter2.5.PNG",
     "name":"Börcsök Barbara",
-    "emai":"fasztudja@gmail.com",
-    "telefonszám":"+36705230972"
+    "mail":"fasztudja@gmail.com",
+    "phone":"+36705230972"
 },
 {
-    "img": "promoter2.0_meret-min.PNG",
-    "name":"Faludi Andii",
-    "emai":"fasztudja@gmail.com",
-    "telefonszám":"+36705230972"
+    "img": "promoter2.0.PNG",
+    "name":"Faludi Andi",
+    "mail":"fasztudja@gmail.com",
+    "phone":"+36705230972"
+},
+{
+    "img": "anyu.PNG",
+    "name":"Ercsu",
+    "mail":"ercsu@gmail.com",
+    "phone":"+36705230972"
 }
 ]
