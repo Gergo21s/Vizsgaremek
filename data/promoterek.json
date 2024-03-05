@@ -21,19 +21,19 @@
     "img": "promoter2.2.PNG",
     "name":"Papp Zsófia",
     "mail":"zsofia_papp99@gmail.com",
-    "telefonszám":"+36306633905"
+    "phone":"+36306633905"
 },
 {
     "img": "promoter2.3.PNG",
     "name":"Füredi Zsanett",
     "mail":"zsnai45@gmail.com",
-    "telefonszám":"+36305260011"
+    "phone":"+36305260011"
 },
 {
     "img": "promoter2.4.PNG",
     "name":"Rab Dorottya",
     "mail":"dorcsi_rab@gmail.com",
-    "telefonszám":"+36203330156"
+    "phone":"+36203330156"
 },
 {
     "img": "promoter2.5.PNG",
@@ -51,6 +51,6 @@
     "img": "anyu.PNG",
     "name":"Ercsu",
     "mail":"borcsokbarbi@gmail.com",
-    "telefonszám":"+36304567221"
+    "phone":"+36304567221"
 }
 ]
