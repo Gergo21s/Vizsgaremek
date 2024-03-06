@@ -1,19 +1,19 @@
 [
   {
     "img": "asztal1_meret-min.png",
-    "title": "Black VIP Table",
+    "title": "White VIP Table",
     "content": "Ez az asztal egész éjszakára lefoglalható. 290 euró a minimális alkoholköltség / asztal.",
     "price": "Asztal ára: 290 €"
   },
   {
     "img": "asztal2_meret-min.png",
-    "title": "VIP Room",
+    "title": "Black VIP Table",
     "content": "Ez az asztal egész éjszakára lefoglalható. 290 euró a minimális alkoholköltség / asztal.",
     "price": "Asztal ára: 290 €"
   },
   {
     "img": "asztal3_meret-min.png",
-    "title": "VIP Stage",
+    "title": "VIP Room",
     "content": "Ez az asztal egész éjszakára lefoglalható. 490 euró a minimális alkoholköltség / asztal.",
     "price": "Asztal ára: 490 €"
   },
