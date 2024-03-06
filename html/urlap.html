@@ -1,6 +1,81 @@
-<div class="row h-100 m-0 justify-content-center align-items-center">
-	<div class="text-center text-white">
-		<h1 class="display-1 text-center text-capitalize text-small-caps">{{$root.state.id}}</h1>
-		<h2 class="display-5 text-center mt-4">Fejlestés alatt!</h2>
+<div class="container">
+	<div class="row h-100 m-0 justify-content-center align-items-center">
+		<form name="tableForm"
+					class="border rounded-3 p-3 my-5
+								 col-11 col-sm-10 col-md-8 col-lg-6 col-xxl-5">
+			<div class="row">
+				<div class="mb-3 col-12 col-sm-6">
+					<label for="table" class="form-label">Asztal:</label>
+					<select id="table" class="form-select"
+									name="table"
+									ng-model="model.table"
+									ng-init="model.table='VIP Room'">
+						<option value="whiteVIP">White VIP Table</option>
+						<option value="blackVIP">Black VIP Table</option>
+						<option value="VIProom" selected>VIP Room</option>
+						<option value="VIPstaged">VIP Staged</option>
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="mb-3 col-12 col-sm-6">
+					<label for="last_name" class="form-label">Családinév:</label>
+					<input type="text" 
+								 class="form-control" 
+								 id="last_name"
+								 name="last_name"
+								 ng-model="model.last_name"
+								 ng-init="model.last_name=null"
+								 required>
+				</div>
+				<div class="mb-3 col-12 col-sm-6">
+					<label for="first_name" class="form-label">Keresztnév:</label>
+					<input type="text" class="form-control" id="first_name">
+				</div>
+			</div>
+			<div class="row">
+				<div class="mb-3 col-12 col-sm-6">
+					<label for="email" class="form-label">Email cím:</label>
+					<input type="email" class="form-control" id="email">
+				</div>
+				<div class="mb-3 col-12 col-sm-6">
+					<label for="phone" class="form-label">Telefonszám:</label>
+					<input type="tel" class="form-control" id="phone">
+				</div>
+			</div>
+			<hr>
+
+			<div class="row">
+				<div class="mb-3 col-12 col-sm-6">
+					<label for="post_code" class="form-label">Írányítószám:</label>
+					<input type="text" class="form-control" id="post_code">
+				</div>
+				<div class="mb-3 col-12 col-sm-6">
+					<label for="city" class="form-label">Település:</label>
+					<input type="text" class="form-control" id="city">
+				</div>
+			</div>
+
+			<div class="mb-3">
+				<label for="address" class="form-label">Cím:</label>
+				<input type="text" class="form-control" id="address">
+			</div>
+			<div class="mb-3">
+				<label for="message" class="form-label">Üzenet:</label>
+				<textarea id="message" class="form-control" rows="3"></textarea>
+			</div>
+			<div class="form-check mb-3">
+				<input class="form-check-input" type="checkbox" value="" id="roole">
+				<label class="form-check-label" for="roole">
+					Megismertem és elfogadtam az Általános Szerződési Feltételeket
+				</label>
+			</div>
+			<button type="button" 
+							class="btn btn-primary"
+							ng-click="payment()"
+							ng-disabled="tableForm.$invalid">
+				Fizetés
+			</button>
+		</form>
 	</div>
 </div>

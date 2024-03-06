@@ -61,8 +61,8 @@
 			.state('urlap', {
 				url: '/urlap',
 				parent: 'root',
-				templateUrl: './html/urlap.html'
-				
+				templateUrl: './html/urlap.html',
+				controller: 'urlapController'
 			});
 			
       $urlRouterProvider.otherwise('/');
@@ -126,23 +126,49 @@
 	])
 	
 	
-		// Promoterek controller
+	// Promoterek controller
 	.controller('promoterekController', [
 		'$scope',
-			'$timeout',
-			'http',
+		'$timeout',
+		'http',
 		function($scope, $timeout, http) {
 				
-				// Get data
-				http.request('./data/promoterek.json')
-				.then(response => {
+			// Get data
+			http.request('./data/promoterek.json')
+			.then(response => {
 	
-					// Set data, and apply change
-					$scope.data = response;
-					$scope.$applyAsync();
-				})
-				.catch(e => $timeout(() => { alert(e); }, 50));
-			}
-		]);
+				// Set data, and apply change
+				$scope.data = response;
+				$scope.$applyAsync();
+			})
+			.catch(e => $timeout(() => { alert(e); }, 50));
+		}
+	])
+
+	// Asztalfoglalás controller
+	.controller('urlapController', [
+		'$scope',
+		'http',
+		function($scope, http) {
+			
+			$scope.tableTypes = [
+
+			];
+			$scope.model = {};
+			$scope.payment = () => {
+				console.log($scope.model);
+			};
+
+			// Get data
+			//http.request('./data/promoterek.json')
+			//.then(response => {
+	//
+			//	// Set data, and apply change
+			//	$scope.data = response;
+			//	$scope.$applyAsync();
+			//})
+			//.catch(e => $timeout(() => { alert(e); }, 50));
+		}
+	]);
 
 })(window, angular);
