@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="row mt-5">
-    <div class="col-md-3"
+  <div class="row mt-5 justify-content-center">
+    <div class="text-center col-11 col-md-6 col-xxl-3 my-3"
          ng-repeat="x in data track by $index">
       <div class="flip-card">
         <div class="flip-card-inner">
@@ -24,20 +24,30 @@
       </div>
     </div>
   </div>
-  <div class="row">
+  <div class="row mb-5">
     <div class="container  mt-5" style=" border: 1px solid #FF00FF;">
       <div class="row p-4">
         <div class="col-md-8">
-         <h3 style="text-align: left;"> Kérdésed van?</h3>
-            <p style="text-align:justify;">Kérjük írja meg nekünk tapasztalatát, ötletét, esetleges panaszát klubunkkal kapcsolatban, vagy ha rendezvényt kívánna nálunk lebonyolítani!</p>
+          <h3 style="text-align: left;"> Kérdésed van?</h3>
+          <p style="text-align:justify;">
+            Kérjük írja meg nekünk tapasztalatát, ötletét, esetleges panaszát klubunkkal kapcsolatban, vagy ha rendezvényt kívánna nálunk lebonyolítani!
+          </p>
         </div>
-       <div class="col-md-2 offset-2">
-        <h5><img src="img/ikon/phone-call-removebg-preview.png" style="width: 29px; height: 31px"> Telefonszám</h5>
+        <div class="col-md-2 offset-2">
+          <h5>
+            <img src="img/ikon/phone-call-removebg-preview.png" 
+                 style="width: 29px; height: 31px">
+              Telefonszám
+          </h5>
           <p> +36(70)523 0972</p>  
-      </div>
+        </div>
         <div class="col-md-2 offset-10">
-          <h5><img src="img/ikon/email-removebg-preview.png" style="width: 29px; height: 31px;"> E-mail cím</h5>
-            <p> gergo99215@gmail.com</p> 
+          <h5>
+            <img src="img/ikon/email-removebg-preview.png" 
+                 style="width: 29px; height: 31px;"> 
+              E-mail cím
+          </h5>
+          <p> gergo99215@gmail.com</p> 
         </div>
       </div>
     </div>
@@ -54,13 +64,13 @@
     <div class="modal-content bg-dark border-1 border-white">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-        <button type="button" class="btn-close btn-close-white" 
+        <button type="button" class="btn-close btn-close-white me-3" 
                 data-bs-dismiss="modal" aria-label="Close">
         </button>
       </div>
       <div class="modal-body">
         
-        <form name="tableForm">
+        <form name="reservationForm">
           <div class="row">
             <div class="mb-3 col-12 col-sm-6">
               <label for="table" class="form-label">Asztal:</label>
@@ -97,13 +107,13 @@
           <div class="row">
             <div class="mb-3 col-12 col-sm-6">
               <label for="email" class="form-label">Email cím:</label>
-              <input type="email"
+              <input type="text"
                      class="form-control" 
                      id="email"
                      name="email"
                      ng-model="model.email"
                      ng-init="model.email=null"
-                    required>
+                     required>
             </div>
             <div class="mb-3 col-12 col-sm-6">
               <label for="phone" class="form-label">Telefonszám:</label>
@@ -153,7 +163,12 @@
           </div>
           <div class="mb-3">
             <label for="message" class="form-label">Üzenet:</label>
-            <textarea id="message" class="form-control" rows="3"></textarea>
+            <textarea id="message" 
+                      class="form-control" 
+                      rows="3"
+                      ng-model="model.message"
+                      ng-init="model.message=null">
+            </textarea>
           </div>
           <div class="form-check mb-3">
             <input class="form-check-input" 
@@ -174,6 +189,7 @@
               Mégsem
             </button>
             <button type="button" class="btn btn-primary mx-2"
+                    ng-disabled="reservationForm.$invalid"
                     ng-click="fizet()">
               Fizetés
             </button>

@@ -57,12 +57,6 @@
 				url: '/kapcsolat',
 				parent: 'root',
 				templateUrl: './html/uder_construction.html'
-			})
-			.state('urlap', {
-				url: '/urlap',
-				parent: 'root',
-				templateUrl: './html/urlap.html',
-				controller: 'urlapController'
 			});
 			
       $urlRouterProvider.otherwise('/');
@@ -95,7 +89,8 @@
 		'util',
     function($scope, $timeout, http, util) {
 			
-			$scope.dataIndex = -1;
+			// Set data index, and model for input
+			$scope.dataIndex = null;
 			$scope.model = {};
 
 			// Get data
@@ -108,6 +103,23 @@
 			})
 			.catch(e => $timeout(() => { alert(e); }, 50));
 
+			// Get modal dialog
+			let modalDialog 	= document.querySelector('#foglalasiUrlap'),
+					modalInstance	= bootstrap.Modal.getOrCreateInstance('#foglalasiUrlap'); 
+			
+			// Set event close modal dialog
+			modalDialog.addEventListener('hidden.bs.modal', function () {
+
+				// Reset model
+				Object.keys($scope.model).forEach(key => {
+					$scope.model[key] = null;
+				});
+
+				// Reset data index
+				$scope.dataIndex = null;
+			});
+
+			// Reservation
 			$scope.foglalas = (event) => {
 				let btn = event.currentTarget;
 				$scope.dataIndex = parseInt(btn.dataset.index);
@@ -115,6 +127,7 @@
 				$scope.$applyAsync();
 			};
 
+			// Pay
 			$scope.fizet = () => {
 				
 				// Get neccesary input properties
@@ -122,16 +135,25 @@
 					'roole',
 					'table'
 				], false);
+
+				// Set type identifier
 				args.type_id = $scope.data[$scope.dataIndex].id;
 
+				// Request to the server
 				http.request({
 					url: './php/reservation.php',
 					data: args
 				})
 				.then(response => {
-					console.log(response);
+
+					$timeout(() => { 
+						alert(response); 
+					}, 50);
 				})
 				.catch(e => $timeout(() => { alert(e); }, 50));
+
+				// Close modal instance
+				modalInstance.hide();
 			};
 		}
 	])
@@ -172,32 +194,6 @@
 				$scope.$applyAsync();
 			})
 			.catch(e => $timeout(() => { alert(e); }, 50));
-		}
-	])
-
-	// Asztalfoglalás controller
-	.controller('urlapController', [
-		'$scope',
-		'http',
-		function($scope, http) {
-			
-			$scope.tableTypes = [
-
-			];
-			$scope.model = {};
-			$scope.payment = () => {
-				console.log($scope.model);
-			};
-
-			// Get data
-			//http.request('./data/promoterek.json')
-			//.then(response => {
-	//
-			//	// Set data, and apply change
-			//	$scope.data = response;
-			//	$scope.$applyAsync();
-			//})
-			//.catch(e => $timeout(() => { alert(e); }, 50));
 		}
 	]);
 

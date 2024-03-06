@@ -1,6 +1,6 @@
 <?php
 declare(strict_types=1);
 
-$_GET['data'] = '{"last_name":"sasasa","first_name":"sasasa","email":"kristof@citromail.hu","phone":"+36 30 999 4444","post_code":"3232","city":"323223","address":"233232","type_id":2}';
+$_GET['data'] = '{"last_name":"Kovács","first_name":"Péter","email":"kovacs.peter@gmail.com","phone":"+3670561651","post_code":"6900","city":"Makó","address":"Futrinka utca 66.","message":"BULI","type_id":2}';
 
 require_once('./reservation.php');

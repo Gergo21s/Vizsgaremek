@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Már 06. 10:59
+-- Létrehozás ideje: 2024. Már 06. 21:37
 -- Kiszolgáló verziója: 10.4.6-MariaDB
 -- PHP verzió: 7.3.8
 
@@ -35,10 +35,10 @@ CREATE TABLE `reservation` (
   `first_name` varchar(30) NOT NULL,
   `email` varchar(30) NOT NULL,
   `phone` varchar(20) NOT NULL,
-  `post_code` smallint(4) NOT NULL,
+  `post_code` varchar(4) NOT NULL,
   `city` varchar(20) NOT NULL,
   `address` varchar(50) NOT NULL,
-  `message` text NOT NULL,
+  `message` text DEFAULT NULL,
   `date` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -52,18 +52,19 @@ CREATE TABLE `reservation_type` (
   `id` int(3) NOT NULL,
   `name` varchar(20) NOT NULL,
   `description` text NOT NULL,
-  `price` int(7) NOT NULL
+  `price` int(7) NOT NULL,
+  `img` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- A tábla adatainak kiíratása `reservation_type`
 --
 
-INSERT INTO `reservation_type` (`id`, `name`, `description`, `price`) VALUES
-(1, 'White VIP Table', 'Ez az asztal egész éjszakára lefoglalható. 190 euró a minimális alkoholköltség / asztal.', 190),
-(2, 'Black VIP Table', 'Ez az asztal egész éjszakára lefoglalható. 290 euró a minimális alkoholköltség / asztal.', 290),
-(3, 'VIP Room', 'Ez az asztal egész éjszakára lefoglalható. 290 euró a minimális alkoholköltség / asztal.', 290),
-(4, 'VIP Stage', 'Ez az asztal egész éjszakára lefoglalható. 490 euró a minimális alkoholköltség / asztal.', 490);
+INSERT INTO `reservation_type` (`id`, `name`, `description`, `price`, `img`) VALUES
+(1, 'White VIP Table', 'Ez az asztal egész éjszakára lefoglalható. 190 euró a minimális alkoholköltség / asztal.', 190, 'asztal1_meret-min.png'),
+(2, 'Black VIP Table', 'Ez az asztal egész éjszakára lefoglalható. 290 euró a minimális alkoholköltség / asztal.', 290, 'asztal2_meret-min.png'),
+(3, 'VIP Room', 'Ez az asztal egész éjszakára lefoglalható. 290 euró a minimális alkoholköltség / asztal.', 290, 'asztal3_meret-min.png'),
+(4, 'VIP Stage', 'Ez az asztal egész éjszakára lefoglalható. 490 euró a minimális alkoholköltség / asztal.', 490, 'asztal4_meret-min.png');
 
 --
 -- Indexek a kiírt táblákhoz
