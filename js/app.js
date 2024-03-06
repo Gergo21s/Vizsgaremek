@@ -61,7 +61,7 @@
 			.state('urlap', {
 				url: '/urlap',
 				parent: 'root',
-				templateUrl: './html/uder_construction.html'
+				templateUrl: './html/urlap.html'
 				
 			});
 			
