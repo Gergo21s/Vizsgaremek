@@ -9,15 +9,15 @@
           </div>
           <div class="flip-card-back">
             <h5 style="text-align: center; font-weight: bold;">
-              {{x.title}}
+              {{x.name}}
             </h5> 
-            <p>{{x.content}}</p> 
+            <p>{{x.description}}</p> 
             <h4>{{x.price}}</h4>
-            <button style="background-color: black;font-weight: bold;">
-              <a ui-sref="urlap"     
-                style="text-decoration-line:none ; color: #FF00FF;">
-                Foglalás
-              </a>
+            <button style="background-color: black;font-weight: bold; color: #FF00FF;"
+                    data-bs-toggle="modal" data-bs-target="#foglalasiUrlap"
+                    ng-click="foglalas($event)"
+                    data-index="{{$index}}">
+              Foglalás
             </button>
           </div>
         </div>
@@ -39,6 +39,146 @@
           <h5><img src="img/ikon/email-removebg-preview.png" style="width: 29px; height: 31px;"> E-mail cím</h5>
             <p> gergo99215@gmail.com</p> 
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" 
+     id="foglalasiUrlap" 
+     data-bs-backdrop="static" 
+     data-bs-keyboard="false" tabindex="-1" 
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content bg-dark border-1 border-white">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+        <button type="button" class="btn-close btn-close-white" 
+                data-bs-dismiss="modal" aria-label="Close">
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <form name="tableForm">
+          <div class="row">
+            <div class="mb-3 col-12 col-sm-6">
+              <label for="table" class="form-label">Asztal:</label>
+              <input type="text" 
+                     class="form-control" 
+                     id="table"
+                     name="table"
+                     ng-model="model.table"
+                     disabled>
+            </div>
+          </div>
+          <div class="row">
+            <div class="mb-3 col-12 col-sm-6">
+              <label for="last_name" class="form-label">Családinév:</label>
+              <input type="text" 
+                     class="form-control" 
+                     id="last_name"
+                     name="last_name"
+                     ng-model="model.last_name"
+                     ng-init="model.last_name=null"
+                     required>
+            </div>
+            <div class="mb-3 col-12 col-sm-6">
+              <label for="first_name" class="form-label">Keresztnév:</label>
+              <input type="text" 
+                       class="form-control" 
+                       id="first_name"
+                       name="first_name"
+                       ng-model="model.first_name"
+                       ng-init="model.first_name=null"
+                       required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="mb-3 col-12 col-sm-6">
+              <label for="email" class="form-label">Email cím:</label>
+              <input type="email"
+                     class="form-control" 
+                     id="email"
+                     name="email"
+                     ng-model="model.email"
+                     ng-init="model.email=null"
+                    required>
+            </div>
+            <div class="mb-3 col-12 col-sm-6">
+              <label for="phone" class="form-label">Telefonszám:</label>
+              <input type="tel" 
+                     class="form-control" 
+                     id="phone"
+                     name="phone"
+                     ng-model="model.phone"
+                     ng-init="model.phone=null"
+                     required>
+            </div>
+          </div>
+          <hr>
+        
+          <div class="row">
+            <div class="mb-3 col-12 col-sm-6">
+              <label for="post_code" class="form-label">Írányítószám:</label>
+              <input type="text"
+                       class="form-control" 
+                       id="post_code"
+                       name="post_code"
+                       ng-model="model.post_code"
+                       ng-init="model.post_code=null"
+                       required>
+            </div>
+            <div class="mb-3 col-12 col-sm-6">
+              <label for="city" class="form-label">Település:</label>
+              <input type="text"
+                     class="form-control" 
+                     id="city"
+                     name="city"
+                     ng-model="model.city"
+                     ng-init="model.city=null"
+                     required>
+            </div>
+          </div>
+        
+          <div class="mb-3">
+            <label for="address" class="form-label">Cím:</label>
+            <input type="text" 
+                   class="form-control" 
+                   id="address"
+                   name="address"
+                   ng-model="model.address"
+                   ng-init="model.address=null"
+                   required>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Üzenet:</label>
+            <textarea id="message" class="form-control" rows="3"></textarea>
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" 
+                   type="checkbox" 
+                   value="" 
+                   id="roole"
+                   name="roole"
+                   ng-model="model.roole"
+                   ng-init="model.roole=null"
+                   required>
+            <label class="form-check-label" for="roole">
+              Megismertem és elfogadtam az Általános Szerződési Feltételeket
+            </label>
+          </div>
+          <hr>
+          <div class="mb-3 text-end">
+            <button type="button" class="btn btn-secondary mx-2" data-bs-dismiss="modal">
+              Mégsem
+            </button>
+            <button type="button" class="btn btn-primary mx-2"
+                    ng-click="fizet()">
+              Fizetés
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>

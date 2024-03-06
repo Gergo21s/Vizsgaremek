@@ -92,17 +92,47 @@
     '$scope',
 		'$timeout',
 		'http',
-    function($scope, $timeout, http) {
+		'util',
+    function($scope, $timeout, http, util) {
 			
+			$scope.dataIndex = -1;
+			$scope.model = {};
+
 			// Get data
-			http.request('./data/asztalfoglalas.json')
+			http.request('./php/reservation_type.php')
 			.then(response => {
 
 				// Set data, and apply change
-				$scope.data = response;
+				$scope.data = response;	
 				$scope.$applyAsync();
 			})
 			.catch(e => $timeout(() => { alert(e); }, 50));
+
+			$scope.foglalas = (event) => {
+				let btn = event.currentTarget;
+				$scope.dataIndex = parseInt(btn.dataset.index);
+				$scope.model.table = $scope.data[$scope.dataIndex].name;
+				$scope.$applyAsync();
+			};
+
+			$scope.fizet = () => {
+				
+				// Get neccesary input properties
+				let args = util.objFilterByKeys($scope.model, [
+					'roole',
+					'table'
+				], false);
+				args.type_id = $scope.data[$scope.dataIndex].id;
+
+				http.request({
+					url: './php/reservation.php',
+					data: args
+				})
+				.then(response => {
+					console.log(response);
+				})
+				.catch(e => $timeout(() => { alert(e); }, 50));
+			};
 		}
 	])
 	
