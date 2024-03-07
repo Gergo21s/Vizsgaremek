@@ -56,7 +56,8 @@
 			.state('kapcsolat', {
 				url: '/kapcsolat',
 				parent: 'root',
-				templateUrl: './html/uder_construction.html'
+				templateUrl: './html/uder_construction.html',
+				controller: 'kapcsolatController'
 			});
 			
       $urlRouterProvider.otherwise('/');
