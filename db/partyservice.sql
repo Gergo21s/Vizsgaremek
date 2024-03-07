@@ -52,7 +52,7 @@ CREATE TABLE `reservation_type` (
   `id` int(3) NOT NULL,
   `name` varchar(20) NOT NULL,
   `description` text NOT NULL,
-  `price` int(7) NOT NULL,
+  `price` varchar(7) NOT NULL,
   `img` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
