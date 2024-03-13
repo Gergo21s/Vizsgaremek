@@ -1,0 +1,14 @@
+[
+{
+"img":"kep1_meret.png",    
+"date":"05.01 Péntek",
+"time": "22:00-05:00",
+"price": "3000Ft-tól"
+},
+{
+    "img": "kep2_meret.png",
+    "date": "05.12 Vasárnap",
+    "time": "20:00-04:00",
+    "price": "5000Ft-tól"
+}
+]

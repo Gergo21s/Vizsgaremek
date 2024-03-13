@@ -1,32 +1,20 @@
-<div class="container">
+<div class="container" style=" border: 1px solid #FF00FF;">
 	<div class="row my-5">
 		<div class="col">
-      <h3>Közelgő bulik</h3>
+      <h3>Következő bulik</h3>
       <div class="card" style="width: 18rem;">
-        <img src="img/kesz/hungi_meret2.png" class="card-img-top" alt="...">
-      
+        <img ng-src="./img/uj/{{x.img}}" class="card-img-top" alt="...">
         <div class="card-body">
-          
-          <h5 class="card-title">valami</h5>
-          <p class="card-text">
-						Some quick example text to build on the card title and make up the bulk of the card's content.
-					</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <h5 class="card-title">Időpont</h5>
+          <p class="card-text">{{x.date}}</p>
+          <p class="card-text">{{x.time}}</p>
+          <h5 class="card-title">Jegyek</h5>
+          <p class="card-text">{{x.price}}</p>
+          <a href="asztalfoglalas.html"  class="btn btn-primary">Asztalfoglalás</a>
+          <a href="#" class="btn btn-primary">Jegyvásárlás</a>
         </div>
       </div>
     </div>
-
-    <div class="col">
-      <div class="card" style="width: 18rem;">
-        <img src="img/kesz/szecsei_meret2.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-						Some quick example text to build on the card title and make up the bulk of the card's content.
-					</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
+    <a href="programok.html" class="btn btn-primary">Összes esemény</a>
 	</div>
 </div>
