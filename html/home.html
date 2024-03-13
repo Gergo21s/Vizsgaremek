@@ -1,6 +1,6 @@
 <div class="container" style=" border: 1px solid #FF00FF;">
 	<div class="row my-5">
-		<div class="col">
+		<div class="col"  ng-repeat="x in data track by $index">
       <h3>Következő bulik</h3>
       <div class="card" style="width: 18rem;">
         <img ng-src="./img/uj/{{x.img}}" class="card-img-top" alt="...">
@@ -18,3 +18,4 @@
     <a href="programok.html" class="btn btn-primary">Összes esemény</a>
 	</div>
 </div>
+
