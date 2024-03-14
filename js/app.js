@@ -170,7 +170,7 @@
 	
 	// Programok controller
   .controller('programokController', [
-    '$scope',
+    	'$scope',
 		'$timeout',
 		'http',
     function($scope, $timeout, http) {
