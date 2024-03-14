@@ -186,6 +186,23 @@
 			.catch(e => $timeout(() => { alert(e); }, 50));
 		}
 	])
+	.controller('programokController', [
+    	'$scope',
+		'$timeout',
+		'http',
+    function($scope, $timeout, http) {
+			
+			// Get data
+			http.request('./data/information.json')
+			.then(response => {
+
+				// Set data, and apply change
+				$scope.data = response;
+				$scope.$applyAsync();
+			})
+			.catch(e => $timeout(() => { alert(e); }, 50));
+		}
+	])
 	
 	
 	// Promoterek controller

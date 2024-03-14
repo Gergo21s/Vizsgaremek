@@ -27,7 +27,7 @@
             Jegyvásárlás
           </a>
           <div class="position-absolute bottom-0 end-0">
-            <button style="background-color:black;font-weight: bold; color: #FF00FF;">
+            <button  data-bs-toggle="modal" data-bs-target="#ikonModal"  style="background-color:black;font-weight: bold; color: #FF00FF;">
             <img src="img/ikon/info.png" width="30" height="30">
           </button>
         </div>
@@ -37,19 +37,36 @@
   </div>
 </div>
 
-<div class="modal" tabindex="-1">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<div class="modal"  id="ikonModal" tabindex="-1" ng-repeat="x in data track by $index">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content information" >
+      <div class="modal-header" >
+        <h5 class="modal-title">Részletek</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Bezárás"></button>
       </div>
-      <div class="modal-body">
-        <p>Modal body text goes here.</p>
+      <div class="modal-body" >
+        <div class="container-fluid" >
+          <div class="row" >
+            <div class="col-sm-8" >
+              <h5>Fellépők:</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item fellepo">{{x.fellepo1}}</li>
+                <li class="list-group-item fellepo">{{x.fellepo2}}</li>
+                <li class="list-group-item fellepo">{{x.fellepo3}}</li>
+                <li class="list-group-item fellepo">{{x.fellepo4}}</li>
+                <li class="list-group-item fellepo">{{x.fellepo5}}</li>
+                <li class="list-group-item fellepo"></li>
+              </ul>
+              <p>{{x.text}}</p>
+              <p>Dress control: {{x.dress}}</p>
+              <p>{{x.ticket}}</p>
+              <a  href="hazirend.html">Házirend</a>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Bezárás</button>
       </div>
     </div>
   </div>

@@ -1,21 +1,21 @@
-<div class="container" style=" border: 1px solid #FF00FF;">
-	<div class="row my-5">
-		<div class="col"  ng-repeat="x in data track by $index">
-      <h3>Következő bulik</h3>
+<div class="container" style=" border: 1px solid #FF00FF; border-radius: 1%;">
+	<div class="col-md row my-5">
+    <h3>Következő bulik</h3>
+		<div class="col-sm"  ng-repeat="x in data track by $index">
       <div class="card" style="width: 18rem;">
         <img ng-src="./img/uj/{{x.img}}" class="card-img-top" alt="...">
-        <div class="card-body">
+        <div class="card-body" style="background-color:  black; color:#FF00FF;">
           <h5 class="card-title">Időpont</h5>
           <p class="card-text">{{x.date}}</p>
           <p class="card-text">{{x.time}}</p>
           <h5 class="card-title">Jegyek</h5>
           <p class="card-text">{{x.price}}</p>
-          <a href="asztalfoglalas.html"  class="btn btn-primary">Asztalfoglalás</a>
-          <a href="#" class="btn btn-primary">Jegyvásárlás</a>
+          <a href="asztalfoglalas.html"  class="btn btn-outline-dark" style="background-color:black; color:#FF00FF">Asztalfoglalás</a>
+          <a href="#" class="btn btn-outline-dark" style="background-color:  black; color:#FF00FF;">Jegyvásárlás</a>
         </div>
       </div>
     </div>
-    <a href="programok.html" class="btn btn-primary">Összes esemény</a>
+    <a href="programok.html" class="btn btn-outline-light btn btn-link" style="background-color:black; color: #FF00FF; text-decoration: none">Összes esemény</a>
 	</div>
 </div>
 
