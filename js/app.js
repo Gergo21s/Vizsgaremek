@@ -204,7 +204,14 @@
 		}
 	])
 	
-	
+	// initialize necessary variable
+	$scope.images = [];
+	$scope.ratings = [];
+	$scope.rating = null;
+	$scope.ratingData = {
+	  rating: null,
+	  ratingText: '',}
+
 	// Promoterek controller
 	.controller('promoterekController', [
 		'$scope',
