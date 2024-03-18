@@ -58,6 +58,12 @@
 				parent: 'root',
 				templateUrl: './html/uder_construction.html',
 				controller: 'kapcsolatController'
+			})
+			.state('hazirend', {
+				url: '/hazirend',
+				parent: 'root',
+				templateUrl: './html/hazirend.html',
+				controller: 'hazirendController'
 			});
 			
       $urlRouterProvider.otherwise('/');
@@ -177,6 +183,42 @@
 			
 			// Get data
 			http.request('./data/programok.json')
+			.then(response => {
+
+				// Set data, and apply change
+				$scope.data = response;
+				$scope.$applyAsync();
+			})
+			.catch(e => $timeout(() => { alert(e); }, 50));
+		}
+	])
+		// Promoter controller
+		.controller('promoterekController', [
+			'$scope',
+			'$timeout',
+			'http',
+		function($scope, $timeout, http) {
+				
+				// Get data
+				http.request('./data/promoterek.json')
+				.then(response => {
+	
+					// Set data, and apply change
+					$scope.data = response;
+					$scope.$applyAsync();
+				})
+				.catch(e => $timeout(() => { alert(e); }, 50));
+			}
+		])
+	//Házirend controller
+	.controller('hazirendController', [
+    	'$scope',
+		'$timeout',
+		'http',
+    function($scope, $timeout, http) {
+			
+			// Get data
+			http.request('./data/hazirend.json')
 			.then(response => {
 
 				// Set data, and apply change
