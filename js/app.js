@@ -64,6 +64,12 @@
 				parent: 'root',
 				templateUrl: './html/hazirend.html',
 				controller: 'hazirendController'
+			})
+			.state('modal', {
+				url: '/programok',
+				parent: 'root',
+				templateUrl: './html/programok.html',
+				controller: 'modalController'
 			});
 			
       $urlRouterProvider.otherwise('/');
@@ -192,6 +198,45 @@
 			.catch(e => $timeout(() => { alert(e); }, 50));
 		}
 	])
+// Information controller
+
+	.controller('modalController', [
+    	'$scope',
+		'$timeout',
+		'http',
+		'util',
+    function($scope, $timeout, http,util) {
+			
+			// Get data
+			http.request('./data/information.json')
+			.then(response => {
+
+				// Set data, and apply change
+				$scope.data = response;
+				$scope.$applyAsync();
+			})
+			.catch(e => $timeout(() => { alert(e); }, 50));
+
+
+			let modalDialog 	= document.querySelector('#ikonModal'),
+			modalInstance	= bootstrap.Modal.getOrCreateInstance('#ikonModal'); 
+	
+	// Set event close modal dialog
+	modalDialog.addEventListener('hidden.bs.modal', function () {
+
+		// Reset model
+		Object.keys($scope.model).forEach(key => {
+			$scope.model[key] = null;
+		});
+
+		// Reset data index
+		$scope.dataIndex = null;
+
+	});
+	modalInstance.hide();
+		}
+	])
+
 		// Promoter controller
 		.controller('promoterekController', [
 			'$scope',
