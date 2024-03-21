@@ -1,17 +1,17 @@
-<div class="container" style=" border: 1px solid #FF00FF; border-radius: 1%;">
+<div class="container home">
 	<div class="col-md row my-5">
     <h3>Következő bulik</h3>
 		<div class="col-sm"  ng-repeat="x in data track by $index">
       <div class="card" style="width: 18rem;">
         <img ng-src="./img/uj/{{x.img}}" class="card-img-top" alt="...">
-        <div class="card-body" style="background-color:  black; color:#FF00FF;">
+        <div class="card-body" id="hatter">
           <h5 class="card-title">Időpont</h5>
           <p class="card-text">{{x.date}}</p>
           <p class="card-text">{{x.time}}</p>
           <h5 class="card-title">Jegyek</h5>
           <p class="card-text">{{x.price}}</p>
-          <a  ui-sref="asztalfoglalas"  class="btn btn-outline-dark" style="background-color:black; color:#FF00FF">Asztalfoglalás</a>
-          <a ui-sref="#" class="btn btn-outline-dark" style="background-color:  black; color:#FF00FF;">Jegyvásárlás</a>
+          <a  ui-sref="asztalfoglalas"  class="btn btn-outline-dark gombok">Asztalfoglalás</a>
+          <a ui-sref="#" class="btn btn-outline-dark gombok">Jegyvásárlás</a>
         </div>
       </div>
     </div>
