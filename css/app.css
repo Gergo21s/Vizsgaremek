@@ -13,8 +13,38 @@
 	text-decoration: none;
 	color: #FF00FF;
 }
-
-
+.home
+{
+	border: 1px solid #FF00FF;
+	border-radius: 1%;
+}
+hr{
+	border-top: 3px solid #FF00FF;
+}
+.kerdes{
+	border: 1px solid #FF00FF;
+}
+#foglal{
+	background-color: black;
+	font-weight: bold; 
+	color: #FF00FF;}
+#ikon{
+	width: 29px; 
+	height: 31px;
+}
+.programok{
+	background-color: black;
+	text-decoration: none;
+	color: #FF00FF;
+}
+#hatter{
+	background-color: black;
+	color: #FF00FF;
+}
+.gombok{
+	background-color: #FF00FF;
+	color: black;
+}
 .page-container {
 	background-color: black; 
 	color: #FF00FF

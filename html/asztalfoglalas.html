@@ -13,8 +13,9 @@
             </h5> 
             <p>{{x.description}}</p> 
             <h4>{{x.price}} </h4>
-            <button style="background-color: black;font-weight: bold; color: #FF00FF;"
-                    data-bs-toggle="modal" data-bs-target="#foglalasiUrlap"
+            <button id="foglal"
+                    data-bs-toggle="modal" 
+                    data-bs-target="#foglalasiUrlap"
                     ng-click="foglalas($event)"
                     data-index="{{$index}}">
               Foglalás
@@ -25,7 +26,7 @@
     </div>
   </div>
   <div class="row mb-5">
-    <div class="container  mt-5" style=" border: 1px solid #FF00FF;">
+    <div class="container  mt-5 kerdes">
       <div class="row p-4">
         <div class="col-md-8">
           <h3 style="text-align: left;"> Kérdésed van?</h3>
@@ -36,7 +37,7 @@
         <div class="col-md-2 offset-2">
           <h5>
             <img src="img/ikon/phone-call-removebg-preview.png" 
-                 style="width: 29px; height: 31px">
+                 id="ikon">
               Telefonszám
           </h5>
           <p> +36(70)523 0972</p>  
@@ -44,7 +45,7 @@
         <div class="col-md-2 offset-10">
           <h5>
             <img src="img/ikon/email-removebg-preview.png" 
-                 style="width: 29px; height: 31px;"> 
+                id="ikon"> 
               E-mail cím
           </h5>
           <p> gergo99215@gmail.com</p> 
