@@ -274,14 +274,6 @@
 		}
 	])
 	
-	// initialize necessary variable
-	$scope.images = [];
-	$scope.ratings = [];
-	$scope.rating = null;
-	$scope.ratingData = {
-	  rating: null,
-	  ratingText: '',}
-
 	// Promoterek controller
 	.controller('promoterekController', [
 		'$scope',
@@ -300,5 +292,78 @@
 			.catch(e => $timeout(() => { alert(e); }, 50));
 		}
 	]);
+
+	function ($scope, http, $timeout, $rootScope, lang) {
+        console.log('Home controller...');
+
+        // Set carousel element
+        const myCarouselElement = document.querySelector('#homeCarousel');
+        const carousel = new bootstrap.Carousel(myCarouselElement, {
+          interval: 4000,
+        });
+        carousel.to(1);
+
+        // initialize necessary variable
+        $scope.images = [];
+        $scope.ratings = [];
+        $scope.rating = null;
+        $scope.ratingData = {
+          rating: null,
+          ratingText: '',
+        };
+
+        // Http request
+        http
+          .request('./php/carousel.php')
+          .then((response) => {
+            $scope.data = response;
+            $scope.data.forEach((image) => {
+              image = image.replace('../', './');
+              $scope.images.push(image);
+            });
+          })
+          .catch((e) => {
+
+            // Resolve completed, and show error
+            $timeout(() => alert(lang.translate(e, true)));
+          });
+
+        // Http request
+        http
+          .request('./php/ratings.php')
+          .then((response) => {
+            $scope.ratings = response;
+          })
+          .catch((e) => {
+            // Resolve completed, and show error
+            $timeout(() => alert(lang.translate(e, true)));
+          });
+
+        // Send Rating
+        $scope.clicked = (event) => {
+          $scope.ratingData.rating = event.currentTarget.dataset.rating;
+        };
+
+        $scope.send = () => {
+          $scope.rating_data = {
+            user_id: $rootScope.user.id,
+            rating: $scope.ratingData.rating,
+            rating_text: $scope.ratingData.ratingText,
+          };
+          http
+            .request({
+              url: './php/send_rating.php',
+              method: 'POST',
+              data: $scope.rating_data,
+            })
+            .then((response) => {})
+            .catch((e) => {
+
+              // Resolve completed, and show error
+              $timeout(() => alert(lang.translate(e, true)));
+            });
+          console.log($scope.rating_data);
+        };
+      };
 
 })(window, angular);
