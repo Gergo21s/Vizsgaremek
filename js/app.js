@@ -103,6 +103,83 @@
 		}
 	])
 
+
+
+	//Home controller
+/* itt TARTUNK 
+	.controller('homeController', [
+		'$scope',
+		'http',
+		'$timeout',
+		'$rootScope',
+		'lang',
+		function ($scope, http, $timeout, $rootScope, lang) {
+		  console.log('Home controller...');
+  
+	
+		  
+  
+		  // initialize necessary variable
+		  $scope.images = [];
+		  $scope.ratings = [];
+		  $scope.rating = null;
+		  $scope.ratingData = {
+			rating: null,
+			ratingText: '',
+		  };
+  
+		  s
+		  // Http request
+		  http
+			.request('./php/ratings.php')
+			.then((response) => {
+			  $scope.ratings = response;
+			})
+			.catch((e) => {
+			  // Resolve completed, and show error
+			  $timeout(() => alert(lang.translate(e, true)));
+			});
+  
+		  // Send Rating
+		  $scope.clicked = (event) => {
+			$scope.ratingData.rating = event.currentTarget.dataset.rating;
+		  };
+  
+		  $scope.send = () => {
+			$scope.rating_data = {
+			  user_id: $rootScope.user.id,
+			  rating: $scope.ratingData.rating,
+			  rating_text: $scope.ratingData.ratingText,
+			};
+			http
+			  .request({
+				url: './php/send_rating.php',
+				method: 'POST',
+				data: $scope.rating_data,
+			  })
+			  .then((response) => {})
+			  .catch((e) => {
+  
+				// Resolve completed, and show error
+				$timeout(() => alert(lang.translate(e, true)));
+			  });
+			console.log($scope.rating_data);
+		  };
+		},
+	  ])
+
+
+
+
+
+
+
+
+
+
+
+
+
 	// Asztalfoglalás controller
   .controller('asztalfoglalasController', [
     '$scope',
@@ -293,57 +370,7 @@
 			})
 			.catch(e => $timeout(() => { alert(e); }, 50));
 		}
-	]);
-
-/*	function ($scope, http, $timeout, $rootScope, lang) {
-        console.log('Home controller...');
-
-        // initialize necessary variable
-        $scope.images = [];
-        $scope.ratings = [];
-        $scope.rating = null;
-        $scope.ratingData = {
-          rating: null,
-          ratingText: '',
-		};
-       
-        // Http request
-        http
-          .request('./php/ratings.php')
-          .then((response) => {
-            $scope.ratings = response;
-          })
-          .catch((e) => {
-            // Resolve completed, and show error
-            $timeout(() => alert(lang.translate(e, true)));
-          });
-
-        // Send Rating
-        $scope.clicked = (event) => {
-          $scope.ratingData.rating = event.currentTarget.dataset.rating;
-        };
-
-        $scope.send = () => {
-          $scope.rating_data = {
-            user_id: $rootScope.user.id,
-            rating: $scope.ratingData.rating,
-            rating_text: $scope.ratingData.ratingText,
-          };
-          http
-            .request({
-              url: './php/send_rating.php',
-              method: 'POST',
-              data: $scope.rating_data,
-            })
-            .then((response) => {})
-            .catch((e) => {
-
-              // Resolve completed, and show error
-              $timeout(() => alert(lang.translate(e, true)));
-            });
-          console.log($scope.rating_data);
-        };
-      }; */
+	])
 
 })
 (window, angular);
