@@ -16,10 +16,10 @@ $query = "SELECT `id`,
                  `fellepo1`, 
                  `fellepo2`, 
                  `fellepo3`, 
-                 `fellepo4`
-                 `fellepo5`
-                 `text`
-                 `dress`
+                 `fellepo4`,
+                 `fellepo5`,
+                 `text`,
+                 `dress`,
                  `ticket`
             FROM `information`
         ORDER BY `id`;";

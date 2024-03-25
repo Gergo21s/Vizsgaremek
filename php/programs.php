@@ -16,7 +16,7 @@ $query = "SELECT `id`,
                  `img`, 
                  `date`, 
                  `time`, 
-                 `price`
+                 `price`,
                  `description`
             FROM `programs`
         ORDER BY `id`;";
