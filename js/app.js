@@ -208,7 +208,7 @@
     function($scope, $timeout, http,util) {
 			
 			// Get data
-			http.request('./data/information.json')
+			http.request('./php/information.php')
 			.then(response => {
 
 				// Set data, and apply change
@@ -242,10 +242,11 @@
 			'$scope',
 			'$timeout',
 			'http',
-		function($scope, $timeout, http) {
+			'util',
+		function($scope, $timeout, http, util) {
 				
 				// Get data
-				http.request('./data/promoterek.json')
+				http.request('./php/promoters.php')
 				.then(response => {
 	
 					// Set data, and apply change
@@ -293,7 +294,7 @@
 		}
 	]);
 
-	function ($scope, http, $timeout, $rootScope, lang) {
+/*	function ($scope, http, $timeout, $rootScope, lang) {
         console.log('Home controller...');
 
         // Set carousel element
@@ -310,7 +311,7 @@
         $scope.ratingData = {
           rating: null,
           ratingText: '',
-        };
+		};
 
         // Http request
         http
@@ -364,6 +365,7 @@
             });
           console.log($scope.rating_data);
         };
-      };
+      }; */
 
-})(window, angular);
+})
+(window, angular);
