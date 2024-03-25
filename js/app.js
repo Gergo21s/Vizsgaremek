@@ -298,13 +298,6 @@
 /*	function ($scope, http, $timeout, $rootScope, lang) {
         console.log('Home controller...');
 
-        // Set carousel element
-        const myCarouselElement = document.querySelector('#homeCarousel');
-        const carousel = new bootstrap.Carousel(myCarouselElement, {
-          interval: 4000,
-        });
-        carousel.to(1);
-
         // initialize necessary variable
         $scope.images = [];
         $scope.ratings = [];
@@ -313,23 +306,7 @@
           rating: null,
           ratingText: '',
 		};
-
-        // Http request
-        http
-          .request('./php/carousel.php')
-          .then((response) => {
-            $scope.data = response;
-            $scope.data.forEach((image) => {
-              image = image.replace('../', './');
-              $scope.images.push(image);
-            });
-          })
-          .catch((e) => {
-
-            // Resolve completed, and show error
-            $timeout(() => alert(lang.translate(e, true)));
-          });
-
+       
         // Http request
         http
           .request('./php/ratings.php')
