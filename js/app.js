@@ -185,10 +185,11 @@
     	'$scope',
 		'$timeout',
 		'http',
-    function($scope, $timeout, http) {
+		'util',
+    function($scope, $timeout, http, util) {
 			
 			// Get data
-			http.request('./data/programok.json')
+			http.request('./php/programs.php')
 			.then(response => {
 
 				// Set data, and apply change
