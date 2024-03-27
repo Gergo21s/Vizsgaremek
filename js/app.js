@@ -354,7 +354,7 @@
 	])
 	
 	// Promoterek controller
-	.controller('promoterekController', [
+/*	.controller('promoterekController', [
 		'$scope',
 		'$timeout',
 		'http',
@@ -370,7 +370,7 @@
 			})
 			.catch(e => $timeout(() => { alert(e); }, 50));
 		}
-	])
+	])*/
 
 })
 (window, angular);
