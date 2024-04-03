@@ -21,7 +21,13 @@
           <a ui-sref="asztalfoglalas" class="btn btn-outline-dark lh-1 gombok">
             Asztalfoglalás
           </a>
-          <a ui-sref="jegyfoglalas" class="btn btn-outline-dark lh-1 gombok">
+          <a ui-sref="jegyfoglalas" 
+             id="foglal"
+             data-bs-toggle="modal" 
+             data-bs-target="#jegyvasarlasiUrlap"
+             ng-click="foglalas($event)"
+             data-index="{{$index}}" 
+             class="btn btn-outline-dark lh-1 gombok">
             Jegyfoglalás
           </a>
           <div class="position-absolute bottom-0 end-0">
