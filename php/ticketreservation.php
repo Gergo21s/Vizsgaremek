@@ -31,7 +31,7 @@ $args = Util::objMerge(array(
 ), $args, true);
 
 // Set query
-$query = "INSERT INTO `reservation` 
+$query = "INSERT INTO `ticketreservation` 
           (`type_id`, `first_name`, `last_name`, `email`, `phone`, 
            `post_code`, `city`, `address`, `message`) VALUES";
 

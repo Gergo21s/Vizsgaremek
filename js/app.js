@@ -288,21 +288,21 @@
 				})
 				.catch(e => $timeout(() => { alert(e); }, 50));
 	
-				// Get modal dialog
-				let modalDialog 	= document.querySelector('#jegyvasarlasiUrlap'),
-						modalInstance	= bootstrap.Modal.getOrCreateInstance('#jegyvasarlasiUrlap'); 
+				// // Get modal dialog
+				// let modalDialog 	= document.querySelector('#jegyvasarlasiUrlap'),
+				// 		modalInstance	= bootstrap.Modal.getOrCreateInstance('#jegyvasarlasiUrlap'); 
 				
-				// Set event close modal dialog
-				modalDialog.addEventListener('hidden.bs.modal', function () {
+				// // Set event close modal dialog
+				// modalDialog.addEventListener('hidden.bs.modal', function () {
 	
-					// Reset model
-					Object.keys($scope.model).forEach(key => {
-						$scope.model[key] = null;
-					});
+				// 	// Reset model
+				// 	Object.keys($scope.model).forEach(key => {
+				// 		$scope.model[key] = null;
+				// 	});
 	
-					// Reset data index
-					$scope.dataIndex = null;
-				});
+				// 	// Reset data index
+				// 	$scope.dataIndex = null;
+				// });
 	
 				// Reservation
 				$scope.foglalas = (event) => {

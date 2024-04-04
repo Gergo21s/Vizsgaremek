@@ -12,7 +12,7 @@ require_once('../../common/php/environment.php');
 $db = new Database();
 
 // Set query
-$query = "SELECT `id`, 
+$query = "SELECT 
                  `img`, 
                  `fellepo1`,
                  `fellepo2`, 
@@ -22,7 +22,9 @@ $query = "SELECT `id`,
                  `date`, 
                  `price` 
             FROM `ticketreservation_type`
-        ORDER BY `id`;";
+            LEFT JOIN `ticketreservation`
+             ON `ticketreservation_type`.`id`=`ticketreservation`.`type_id`
+         WHERE `type_id`=:id";
 
 // Execute query
 $result = $db->execute($query);
