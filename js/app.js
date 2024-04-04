@@ -279,7 +279,7 @@
 				$scope.model = {};
 	
 				// Get data
-				http.request('./php/reservation_type.php')
+				http.request('./php/ticketreservation_type.php')
 				.then(response => {
 	
 					// Set data, and apply change
@@ -289,8 +289,8 @@
 				.catch(e => $timeout(() => { alert(e); }, 50));
 	
 				// Get modal dialog
-				let modalDialog 	= document.querySelector('#foglalasiUrlap'),
-						modalInstance	= bootstrap.Modal.getOrCreateInstance('#foglalasiUrlap'); 
+				let modalDialog 	= document.querySelector('#jegyvasarlasiUrlap'),
+						modalInstance	= bootstrap.Modal.getOrCreateInstance('#jegyvasarlasiUrlap'); 
 				
 				// Set event close modal dialog
 				modalDialog.addEventListener('hidden.bs.modal', function () {
@@ -326,7 +326,7 @@
 	
 					// Request to the server
 					http.request({
-						url: './php/reservation.php',
+						url: './php/ticketreservation.php',
 						data: args
 					})
 					.then(response => {
