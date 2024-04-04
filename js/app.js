@@ -77,6 +77,13 @@
 				parent: 'root',
 				templateUrl: './html/jegyfoglalas.html',
 				controller: 'jegyfoglalasController'
+			})
+			
+			.state('header', {
+				url: '/header',
+				parent: 'root',
+				templateUrl: './html/header.html',
+				controller: 'headerController'
 			});
 			
       $urlRouterProvider.otherwise('/');
@@ -263,6 +270,79 @@
 			};
 		}
 	])
+
+
+
+// header controller
+.controller('headerController', [
+    '$scope',
+		'$timeout',
+		'http',
+		'util',
+    function($scope, $timeout, http, util) {
+			
+			// Set data index, and model for input
+			$scope.dataIndex = null;
+			$scope.model = {};
+			// Get modal dialog
+			let modalDialog 	= document.querySelector('#bejelentkezesikon'),
+					modalInstance	= bootstrap.Modal.getOrCreateInstance('#bejelentkezesikon'); 
+			
+			// Set event close modal dialog
+			modalDialog.addEventListener('hidden.bs.modal', function () {
+
+				// Reset model
+				Object.keys($scope.model).forEach(key => {
+					$scope.model[key] = null;
+				});
+
+				// Reset data index
+				$scope.dataIndex = null;
+			});
+
+			// Reservation
+			$scope.foglalas = (event) => {
+				let btn = event.currentTarget;
+				$scope.dataIndex = parseInt(btn.dataset.index);
+				$scope.model.table = $scope.data[$scope.dataIndex].name;
+				$scope.$applyAsync();
+			};
+
+			// Pay
+			$scope.regisztral = () => {
+				
+				// Get neccesary input properties
+				let args = util.objFilterByKeys($scope.model, [
+					'roole',
+					'table'
+				], false);
+
+				// Set type identifier
+				args.type_id = $scope.data[$scope.dataIndex].id;
+
+				// Request to the server
+				http.request({
+					url: './php/registration.php',
+					data: args
+				})
+				.then(response => {
+
+					$timeout(() => { 
+						alert(response); 
+					}, 50);
+				})
+				.catch(e => $timeout(() => { alert(e); }, 50));
+
+				// Close modal instance
+				modalInstance.hide();
+			};
+		}
+	])
+
+
+
+
+
 
 
 
