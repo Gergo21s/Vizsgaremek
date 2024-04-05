@@ -372,16 +372,16 @@
 				 let modalDialog 	= document.querySelector('#jegyvasarlasiUrlap'),
 				 		modalInstance	= bootstrap.Modal.getOrCreateInstance('#jegyvasarlasiUrlap'); 
 				
-				 //Set event close modal dialog
+				// // Set event close modal dialog
 				 modalDialog.addEventListener('hidden.bs.modal', function () {
 	
-				 	// Reset model
-				 	Object.keys($scope.model).forEach(key => {
+				// 	// Reset model
+					Object.keys($scope.model).forEach(key => {
 				 		$scope.model[key] = null;
 				 	});
 	
 				// 	// Reset data index
-					$scope.dataIndex = null;
+				 	$scope.dataIndex = null;
 				 });
 	
 				// Reservation
@@ -448,6 +448,7 @@
 				$scope.$applyAsync();
 			})
 			.catch(e => $timeout(() => { alert(e); }, 50));
+			
 		}
 	])
 // Information controller
@@ -526,6 +527,25 @@
 			.catch(e => $timeout(() => { alert(e); }, 50));
 		}
 	])
+	
+	// Promoterek controller
+/*	.controller('promoterekController', [
+		'$scope',
+		'$timeout',
+		'http',
+		function($scope, $timeout, http) {
+				
+			// Get data
+			http.request('./data/promoterek.json')
+			.then(response => {
+	
+				// Set data, and apply change
+				$scope.data = response;
+				$scope.$applyAsync();
+			})
+			.catch(e => $timeout(() => { alert(e); }, 50));
+		}
+	])*/
 
 })
 (window, angular);
