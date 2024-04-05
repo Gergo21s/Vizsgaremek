@@ -418,7 +418,7 @@
 					.catch(e => $timeout(() => { alert(e); }, 50));
 	
 					// Close modal instance
-					modalInstance.hide();
+					// modalInstance.hide();
 				};
 			}
 		])

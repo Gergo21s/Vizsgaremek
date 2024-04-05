@@ -45,8 +45,8 @@ $db = null;
 if (!$result['affectedRows']) {
 
 	// Set error
-	Util::setError('Az asztalfoglalás nem sikerült!');
+	Util::setError('A jegyvásárlás nem sikerült!');
 }
 
 // Set response
-Util::setResponse("Az asztalfoglalás sikeresen megtörtént!");
+Util::setResponse("A jegyvásárlás sikerült!(Jegyedet a helyszínen tudod átvenni)");

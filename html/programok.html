@@ -4,9 +4,7 @@
          ng-repeat="x in data track by $index">
       <div class="card my-5" style="width: 24rem;">
         <img ng-src="./img/uj/{{x.img}}" 
-             class="card-img-top" alt="..." 
-             data-bs-toggle="modal" 
-             data-bs-target="#buli1modal">
+             class="card-img-top">
         <div class="card-body" style="background-color: black; color:#FF00FF;">
           <div>
             <span style="float: left; font-weight: bold;">Időpont</span><br>
@@ -23,9 +21,7 @@
           </a>
           <a ui-sref="jegyfoglalas" 
              id="foglal"
-             data-bs-toggle="modal" 
              data-bs-target="#jegyvasarlasiUrlap"
-             ng-click="foglalas($event)"
              data-index="{{$index}}" 
              class="btn btn-outline-dark lh-1">
             Jegyfoglalás
