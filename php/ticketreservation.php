@@ -20,6 +20,7 @@ $args['date'] = date('Y-m-d H:i:s');
 // Merge arguments with default
 $args = Util::objMerge(array(
   "type_id" => null, 
+  "piece" => null,
   "first_name" => null, 
   "last_name" => null, 
   "email" => null, 
@@ -32,7 +33,7 @@ $args = Util::objMerge(array(
 
 // Set query
 $query = "INSERT INTO `ticketreservation` 
-          (`type_id`, `first_name`, `last_name`, `email`, `phone`, 
+          (`type_id`, `piece`, `first_name`, `last_name`, `email`, `phone`, 
            `post_code`, `city`, `address`, `message`) VALUES";
 
 // Execute query with arguments
@@ -49,4 +50,4 @@ if (!$result['affectedRows']) {
 }
 
 // Set response
-Util::setResponse("A jegyvásárlás sikerült!(Jegyedet a helyszínen tudod átvenni)");
+Util::setResponse("A jegyvásárlás sikerült! (Jegyedet a helyszínen tudod átvenni.)");

@@ -1,4 +1,4 @@
-;(function(window, angular) {
+(function(window, angular) {
 
   'use strict';
 
@@ -28,13 +28,15 @@
 						templateUrl: './html/footer.html'
 					}
 				}
-      })
+    })
+
 			.state('home', {
 				url: '/',
 				parent: 'root',
 				templateUrl: './html/home.html',
 				controller: 'homeController'
 			})
+
 			.state('asztalfoglalas', {
 				url: '/asztalfoglalas',
 				parent: 'root',
@@ -56,7 +58,7 @@
 			.state('kapcsolat', {
 				url: '/kapcsolat',
 				parent: 'root',
-				templateUrl: './html/uder_construction.html',
+				templateUrl: './html/user_construction.html',
 				controller: 'kapcsolatController'
 			})
 			.state('hazirend', {
@@ -65,13 +67,7 @@
 				templateUrl: './html/hazirend.html',
 				controller: 'hazirendController'
 			})
-			.state('modal', {
-				url: '/programok',
-				parent: 'root',
-				templateUrl: './html/programok.html',
-				controller: 'modalController'
-			})
-			
+						
 			.state('jegyfoglalas', {
 				url: '/jegyfoglalas',
 				parent: 'root',
@@ -79,13 +75,21 @@
 				controller: 'jegyfoglalasController'
 			})
 			
-			.state('header', {
-				url: '/header',
+			.state('informacio', {
+				url: '/informacio',
 				parent: 'root',
-				templateUrl: './html/header.html',
-				controller: 'headerController'
+				templateUrl: './html/informacio.html',
+				controller: 'informacioController'
+			})
+
+			.state('regisztracio', {
+				url: '/regisztracio',
+				parent: 'root',
+				templateUrl: './html/regisztracio.html',
+				controller: 'regisztracioController'
 			});
-			
+
+					
       $urlRouterProvider.otherwise('/');
     }
   ])
@@ -114,84 +118,9 @@
 			$scope.$applyAsync();
 		})
 		.catch(e => $timeout(() => { alert(e); }, 50));
+
 		}
 	])
-
-
-
-	//Home controller
-/* itt TARTUNK 
-	.controller('homeController', [
-		'$scope',
-		'http',
-		'$timeout',
-		'$rootScope',
-		'lang',
-		function ($scope, http, $timeout, $rootScope, lang) {
-		  console.log('Home controller...');
-  
-	
-		  
-  
-		  // initialize necessary variable
-		  $scope.images = [];
-		  $scope.ratings = [];
-		  $scope.rating = null;
-		  $scope.ratingData = {
-			rating: null,
-			ratingText: '',
-		  };
-  
-		  s
-		  // Http request
-		  http
-			.request('./php/ratings.php')
-			.then((response) => {
-			  $scope.ratings = response;
-			})
-			.catch((e) => {
-			  // Resolve completed, and show error
-			  $timeout(() => alert(lang.translate(e, true)));
-			});
-  
-		  // Send Rating
-		  $scope.clicked = (event) => {
-			$scope.ratingData.rating = event.currentTarget.dataset.rating;
-		  };
-  
-		  $scope.send = () => {
-			$scope.rating_data = {
-			  user_id: $rootScope.user.id,
-			  rating: $scope.ratingData.rating,
-			  rating_text: $scope.ratingData.ratingText,
-			};
-			http
-			  .request({
-				url: './php/send_rating.php',
-				method: 'POST',
-				data: $scope.rating_data,
-			  })
-			  .then((response) => {})
-			  .catch((e) => {
-  
-				// Resolve completed, and show error
-				$timeout(() => alert(lang.translate(e, true)));
-			  });
-			console.log($scope.rating_data);
-		  };
-		},
-	  ])
-*/
-
-
-
-
-
-
-
-
-
-
 
 
 	// Asztalfoglalás controller
@@ -273,9 +202,9 @@
 
 
 
-// header controller
-.controller('headerController', [
-    '$scope',
+// Regisztráció controller
+.controller('regisztracioController', [
+    	'$scope',
 		'$timeout',
 		'http',
 		'util',
@@ -284,9 +213,23 @@
 			// Set data index, and model for input
 			$scope.dataIndex = null;
 			$scope.model = {};
+
+			// Request to the server
+			http.request({
+				url: './php/registration.php',
+				data: args
+			})
+			.then(response => {
+
+				$timeout(() => { 
+					alert(response); 
+				}, 50);
+			})
+			.catch(e => $timeout(() => { alert(e); }, 50));
+			
 			// Get modal dialog
-			let modalDialog 	= document.querySelector('#bejelentkezesikon'),
-					modalInstance	= bootstrap.Modal.getOrCreateInstance('#bejelentkezesikon'); 
+			let modalDialog 	= document.querySelector('#regisztracioModal'),
+					modalInstance	= bootstrap.Modal.getOrCreateInstance('#regisztracioModal'); 
 			
 			// Set event close modal dialog
 			modalDialog.addEventListener('hidden.bs.modal', function () {
@@ -300,11 +243,11 @@
 				$scope.dataIndex = null;
 			});
 
-			// Reservation
-			$scope.foglalas = (event) => {
+			// Registration
+			$scope.regisztralas = (event) => {
 				let btn = event.currentTarget;
 				$scope.dataIndex = parseInt(btn.dataset.index);
-				$scope.model.table = $scope.data[$scope.dataIndex].name;
+				$scope.model.reg = $scope.data[$scope.dataIndex].id;
 				$scope.$applyAsync();
 			};
 
@@ -317,22 +260,12 @@
 					'table'
 				], false);
 
-				// Set type identifier
+				// Set type identifier  ???
+
 				args.type_id = $scope.data[$scope.dataIndex].id;
 
-				// Request to the server
-				http.request({
-					url: './php/registration.php',
-					data: args
-				})
-				.then(response => {
 
-					$timeout(() => { 
-						alert(response); 
-					}, 50);
-				})
-				.catch(e => $timeout(() => { alert(e); }, 50));
-
+				
 				// Close modal instance
 				modalInstance.hide();
 			};
@@ -340,15 +273,9 @@
 	])
 
 
-
-
-
-
-
-
-	// jegyfoglalas controller
+	// Jegyfoglalas controller
 	.controller('jegyfoglalasController', [
-		'$scope',
+			'$scope',
 			'$timeout',
 			'http',
 			'util',
@@ -368,27 +295,29 @@
 				})
 				.catch(e => $timeout(() => { alert(e); }, 50));
 	
-				 //Get modal dialog
-				 let modalDialog 	= document.querySelector('#jegyvasarlasiUrlap'),
-				 		modalInstance	= bootstrap.Modal.getOrCreateInstance('#jegyvasarlasiUrlap'); 
+				// Get modal dialog
+				let modalDialog 	= document.querySelector('#jegyfoglalasiUrlap'),
+						modalInstance	= bootstrap.Modal.getOrCreateInstance('#jegyfoglalasiUrlap'); 
 				
-				// // Set event close modal dialog
-				 modalDialog.addEventListener('hidden.bs.modal', function () {
+				// Set event close modal dialog
+				modalDialog.addEventListener('hidden.bs.modal', function () {
 	
-				// 	// Reset model
+					// Reset model
 					Object.keys($scope.model).forEach(key => {
-				 		$scope.model[key] = null;
-				 	});
+						$scope.model[key] = null;
+					});
 	
-				// 	// Reset data index
-				 	$scope.dataIndex = null;
-				 });
+					// Reset data index
+					$scope.dataIndex = null;
+				});
 	
-				// Reservation
-				$scope.foglalas = (event) => {
+				// Ticketreservation
+				$scope.jegyfoglalas = (event) => {
 					let btn = event.currentTarget;
 					$scope.dataIndex = parseInt(btn.dataset.index);
-					$scope.model.table = $scope.data[$scope.dataIndex].name;
+					//Mi jelenjen meg abban a mezőben, amelyre mutatunk, 
+					//itt amelyik programra vesszük a jegyet. 
+					$scope.model.ticket = $scope.data[$scope.dataIndex].date;
 					$scope.$applyAsync();
 				};
 	
@@ -418,18 +347,48 @@
 					.catch(e => $timeout(() => { alert(e); }, 50));
 	
 					// Close modal instance
-					 modalInstance.hide();
+					modalInstance.hide();
 				};
 			}
 		])
 
+		// Informacio controller
+	.controller('informacioController', [
+		'$scope',
+		'$timeout',
+		'http',
+		'util',
+	function($scope, $timeout, http, util) {
+			
+			// Set data index, and model for input
+			$scope.dataIndex = null;
+			$scope.model = {};
 
+			// Get data
+			http.request('./php/information.php')
+			.then(response => {
 
+				// Set data, and apply change
+				$scope.data = response;	
+				$scope.$applyAsync();
+			})
+			.catch(e => $timeout(() => { alert(e); }, 50));
 
+			
+			// Information
+			$scope.info = (event) => {
+				let btn = event.currentTarget;
+				$scope.dataIndex = parseInt(btn.dataset.index);
+				//Mi jelenjen meg abban a mezőben, amelyre mutatunk, 
+				//itt amelyik programinfóját megnézzük. 
+				$scope.model.info = $scope.data[$scope.dataIndex].date;
+				$scope.$applyAsync();
+			};
+			
 
+		}
+	])
 
-
-	
 	// Programok controller
   .controller('programokController', [
     	'$scope',
@@ -448,20 +407,22 @@
 				$scope.$applyAsync();
 			})
 			.catch(e => $timeout(() => { alert(e); }, 50));
+
 			
 		}
 	])
-// Information controller
 
-	.controller('modalController', [
-    	'$scope',
+
+	// Promoter controller
+	.controller('promoterekController', [
+		'$scope',
 		'$timeout',
 		'http',
 		'util',
-    function($scope, $timeout, http,util) {
+	function($scope, $timeout, http, util) {
 			
 			// Get data
-			http.request('./php/information.php')
+			http.request('./php/promoters.php')
 			.then(response => {
 
 				// Set data, and apply change
@@ -469,83 +430,34 @@
 				$scope.$applyAsync();
 			})
 			.catch(e => $timeout(() => { alert(e); }, 50));
-
-
-			let modalDialog 	= document.querySelector('#ikonModal'),
-			modalInstance	= bootstrap.Modal.getOrCreateInstance('#ikonModal'); 
-	
-	// Set event close modal dialog
-	modalDialog.addEventListener('hidden.bs.modal', function () {
-
-		// Reset model
-		Object.keys($scope.model).forEach(key => {
-			$scope.model[key] = null;
-		});
-
-		// Reset data index
-		$scope.dataIndex = null;
-
-	});
-	modalInstance.hide();
 		}
-	])
-
-		// Promoter controller
-		.controller('promoterekController', [
-			'$scope',
-			'$timeout',
-			'http',
-			'util',
-		function($scope, $timeout, http, util) {
-				
-				// Get data
-				http.request('./php/promoters.php')
-				.then(response => {
-	
-					// Set data, and apply change
-					$scope.data = response;
-					$scope.$applyAsync();
-				})
-				.catch(e => $timeout(() => { alert(e); }, 50));
-			}
-		])
+	])	
+		
 	//Házirend controller
 	.controller('hazirendController', [
-    	'$scope',
-		'$timeout',
-		'http',
-    function($scope, $timeout, http) {
-			
-			// Get data
-			http.request('./data/hazirend.json')
-			.then(response => {
-
-				// Set data, and apply change
-				$scope.data = response;
-				$scope.$applyAsync();
-			})
-			.catch(e => $timeout(() => { alert(e); }, 50));
-		}
-	])
-	
-	// Promoterek controller
-/*	.controller('promoterekController', [
 		'$scope',
 		'$timeout',
 		'http',
 		function($scope, $timeout, http) {
-				
-			// Get data
-			http.request('./data/promoterek.json')
+			http.request('./data/hazirend.json')
 			.then(response => {
-	
+		
 				// Set data, and apply change
 				$scope.data = response;
 				$scope.$applyAsync();
 			})
 			.catch(e => $timeout(() => { alert(e); }, 50));
-		}
-	])*/
+			}
+		])
 
+	//Kapcsolat controller
+	.controller('kapcsolatController', [
+		'$scope',
+		'$timeout',
+		'http',
+		function($scope, $timeout, http) {
+			
+			}
+		])
 })
 (window, angular);

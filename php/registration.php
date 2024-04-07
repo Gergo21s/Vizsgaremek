@@ -19,10 +19,10 @@ $args['date'] = date('Y-m-d H:i:s');
 
 // Merge arguments with default
 $args = Util::objMerge(array(
-  "id" => null, 
   "first_name" => null, 
   "last_name" => null, 
   "email" => null, 
+  "password" => null,
   "phone" => null, 
   "post_code" => null, 
   "city" => null, 
@@ -32,7 +32,7 @@ $args = Util::objMerge(array(
 
 // Set query
 $query = "INSERT INTO `registration` 
-          (`id`, `first_name`, `last_name`, `email`, `phone`, 
+          (`first_name`, `last_name`, `email`, `password`, `phone`, 
            `post_code`, `city`, `address`, `date`) VALUES";
 
 // Execute query with arguments
