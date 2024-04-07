@@ -1,5 +1,206 @@
+<div class="container">
 
+  <div class="row text-center mt-5">
+    <div class="col">
+      <h5 class="fst-italic text-uppercase display-5">
+      Jól gondold meg!
+    </h5>
+    <p class="text-white fs-5 fst-italic px-4 mt-3"> 
+      Több buli biztos nem érdekel?         	
+    </p>
+    </div>
+  </div>
 
+  <div class="row">
+      <div class="col-md-6 p-3" ng-repeat="x in data track by $index">
+        <img style="border:1px solid #FF00FF;" 
+             class="rounded" 
+             ng-src="./img/uj/{{x.img}}">
+        <div>
+        <h5 class="mt-2">Fellépők:</h5>
+        <ul class="list-group list-group-horizontal">
+          <li class="list-group-item fellepo1">{{x.fellepo1}}</li>
+          <li class="list-group-item fellepo2">{{x.fellepo2}}</li>
+          <li class="list-group-item fellepo3">{{x.fellepo3}}</li>
+          <li class="list-group-item fellepo4">{{x.fellepo4}}</li>
+          <li class="list-group-item fellepo5">{{x.fellepo5}}</li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="mt-2">Időpont:</h5>
+        <span>{{x.date}}</span>
+      </div>
+      <div>
+        <h5 class="mt-2">Ár:</h5>
+        <span>{{x.price}} Ft</span>
+      </div>
+      <button id="jegyfoglal"
+              
+              data-bs-toggle="modal" 
+              data-bs-target="#jegyfoglalasiUrlap"
+              ng-click="jegyfoglalas($event)"
+              data-index="{{$index}}"
+              class="btn btn-outline-dark lh-1 gombok my-2">
+                Jegyvásárlás
+      </button>
+      </div>
 
+  </div>
+</div>
 
-    
+   <!-- Modal -->
+   <div class="modal fade"
+      id="jegyfoglalasiUrlap" 
+      data-bs-backdrop="static" 
+      data-bs-keyboard="false" tabindex="-1" 
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+   <div class="modal-dialog modal-lg modal-dialog-scrollable">
+     <div class="modal-content bg-dark border-1 border-white">
+       <div class="modal-header">
+         <h1 class="modal-title fs-5" id="staticBackdropLabel">Jegyfoglalás</h1>
+         <button type="button" class="btn-close btn-close-white me-3" 
+                 data-bs-dismiss="modal" aria-label="Close">
+         </button>
+       </div>
+       <div class="modal-body">
+         
+         <form name="ticketreservationForm">
+           <div class="row">
+             <div class="mb-3 col-12 col-sm-6">
+               <label for="ticket" class="form-label">Dátum:</label>
+               <input type="text" 
+                      class="form-control" 
+                      id="ticket"
+                      name="ticket"
+                      ng-model="model.ticket"
+                      disabled>
+             </div>
+             <div class="mb-3 col-12 col-sm-6">
+              <label for="piece" class="form-label">Mennyiség:</label>
+              <input type="text" 
+                     class="form-control" 
+                     id="piece"
+                     name="piece"
+                     ng-model="model.piece"
+                     ng-init="model.piece=null"
+                     required>
+            </div>
+           </div>
+
+            <div class="row">
+             <div class="mb-3 col-12 col-sm-6">
+               <label for="last_name" class="form-label">Családinév:</label>
+               <input type="text" 
+                      class="form-control" 
+                      id="last_name"
+                      name="last_name"
+                      ng-model="model.last_name"
+                      ng-init="model.last_name=null"
+                      required>
+             </div>
+             <div class="mb-3 col-12 col-sm-6">
+               <label for="first_name" class="form-label">Keresztnév:</label>
+               <input type="text" 
+                        class="form-control" 
+                        id="first_name"
+                        name="first_name"
+                        ng-model="model.first_name"
+                        ng-init="model.first_name=null"
+                        required>
+             </div>
+           </div>
+           <div class="row">
+             <div class="mb-3 col-12 col-sm-6">
+               <label for="email" class="form-label">Email cím:</label>
+               <input type="text"
+                      class="form-control" 
+                      id="email"
+                      name="email"
+                      ng-model="model.email"
+                      ng-init="model.email=null"
+                      required>
+             </div>
+             <div class="mb-3 col-12 col-sm-6">
+               <label for="phone" class="form-label">Telefonszám:</label>
+               <input type="tel" 
+                      class="form-control" 
+                      id="phone"
+                      name="phone"
+                      ng-model="model.phone"
+                      ng-init="model.phone=null"
+                      required>
+             </div>
+           </div>
+           <hr>
+         
+           <div class="row">
+             <div class="mb-3 col-12 col-sm-6">
+               <label for="post_code" class="form-label">Írányítószám:</label>
+               <input type="text"
+                        class="form-control" 
+                        id="post_code"
+                        name="post_code"
+                        ng-model="model.post_code"
+                        ng-init="model.post_code=null"
+                        required>
+             </div>
+             <div class="mb-3 col-12 col-sm-6">
+               <label for="city" class="form-label">Település:</label>
+               <input type="text"
+                      class="form-control" 
+                      id="city"
+                      name="city"
+                      ng-model="model.city"
+                      ng-init="model.city=null"
+                      required>
+             </div>
+           </div>
+         
+           <div class="mb-3">
+             <label for="address" class="form-label">Cím:</label>
+             <input type="text" 
+                    class="form-control" 
+                    id="address"
+                    name="address"
+                    ng-model="model.address"
+                    ng-init="model.address=null"
+                    required>
+           </div>
+           <div class="mb-3">
+             <label for="message" class="form-label">Üzenet:</label>
+             <textarea id="message" 
+                       class="form-control" 
+                       rows="3"
+                       ng-model="model.message"
+                       ng-init="model.message=null">
+             </textarea>
+           </div>
+           <div class="form-check mb-3">
+             <input class="form-check-input" 
+                    type="checkbox" 
+                    value="" 
+                    id="roole"
+                    name="roole"
+                    ng-model="model.roole"
+                    ng-init="model.roole=null"
+                    required>
+             <label class="form-check-label" for="roole">
+               Megismertem és elfogadtam az Általános Szerződési Feltételeket
+             </label>
+           </div>
+           <hr>
+           <div class="mb-3 text-end">
+             <button type="button" class=" btn btn-secondary mx-2 " data-bs-dismiss="modal">
+               Mégsem
+             </button>
+             <button type="button" class="btn btn-primary mx-2"
+                     ng-disabled="ticketreservationForm.$invalid"
+                     ng-click="fizet()">
+               Fizetés
+             </button>
+           </div>
+         </form>
+       </div>
+     </div>
+   </div>
+ </div>

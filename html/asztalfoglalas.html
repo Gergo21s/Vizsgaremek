@@ -1,5 +1,11 @@
 <div class="container">
-  <div class="row mt-5 justify-content-center">
+  <div class="row mt-5 text-center">
+    <h5 class="fst-italic text-uppercase display-5">
+      Bulizz úgy, mint a sztárok!
+    </h5>
+    <p class="text-white fs-5 fst-italic px-4 mt-3"> 
+      Foglalj asztalt minél hamarabb, hogy VIP vendégként élvezd a buli minden pillanatát!         	
+    </p>
     <div class="text-center col-11 col-md-6 col-xxl-3 my-3"
          ng-repeat="x in data track by $index">
       <div class="flip-card">
@@ -25,7 +31,10 @@
       </div>
     </div>
   </div>
-  <div class="row mb-5">
+
+<!-- Ez helyett véleményeket tennék... -->
+
+  <!-- <div class="row mb-5">
     <div class="container  mt-5 kerdes">
       <div class="row p-4">
         <div class="col-md-8">
@@ -52,7 +61,49 @@
         </div>
       </div>
     </div>
+  </div> -->
+
+  <!-- Véleményeket -->
+  <div class="row text-center">
+    <h5 class="fst-italic text-uppercase display-5">
+       Rólunk mondták
+    </h5>
   </div>
+  <div class="row align-items-md-stretch my-3">
+    <div class="col-md-4">
+      <div class="h-100 p-5 text-white bg-dark rounded-3">
+        <h2>Ancsa</h2>
+        <p>Úgy éreztem magam, mint egy igazi sztár, 
+          celeb vagy influenszer. 
+          Nem kellett tolonganunk a bárpultnál, kényelmesen szórakozhattunk,
+           minden megvolt a VIP asztalunknál, amire szükségünk volt a 
+           felejthetetlen bulizáshoz. 
+           Mindenkinek ajánlom a Party Service asztal- és jegyfoglalását! :)</p>
+        <a ui-sref="programok"  class="btn btn-outline-dark gombok">
+            Programok
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="h-100 p-5 bg-light border rounded-3">
+        <h2>Lorem ipsum dolor</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tempore, porro provident quaerat minima rem, unde non accusamus voluptas sint praesentium totam repellat accusantium sunt corporis ab sit commodi. Beatae!</p>
+        <a ui-sref="programok"  class="btn btn-outline-dark gombok">
+          Programok
+      </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="h-100 p-5 text-white bg-dark rounded-3">
+        <h2>Lorem ipsum dolor</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus tempore, porro provident quaerat minima rem, unde non accusamus voluptas sint praesentium totam repellat accusantium sunt corporis ab sit commodi. Beatae!</p>
+        <a ui-sref="programok"  class="btn btn-outline-dark gombok">
+          Programok
+      </a>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <!-- Modal -->

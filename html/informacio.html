@@ -1,0 +1,18 @@
+<div class="container-fluid" >
+    <div class="row" >
+      <div class="col-sm-8" ng-repeat="x in data track by $index">
+        <h5 class="mt-2">Fellépők:</h5>
+          <ul class="list-group">
+            <li class="list-group-item fellepo1">{{x.fellepo1}}</li>
+            <li class="list-group-item fellepo2">{{x.fellepo2}}</li>
+            <li class="list-group-item fellepo3">{{x.fellepo3}}</li>
+            <li class="list-group-item fellepo4">{{x.fellepo4}}</li>
+            <li class="list-group-item fellepo5">{{x.fellepo5}}</li>
+          </ul>
+        <p>{{x.text}}</p>
+        <p>Dress control: {{x.dress}}</p>
+        <p>{{x.ticket}} </p>
+        <a class="hazirend" ui-sref="hazirend">Házirend</a>
+      </div>
+    </div>
+  </div>
