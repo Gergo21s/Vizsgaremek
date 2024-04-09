@@ -118,7 +118,6 @@
 			$scope.$applyAsync();
 		})
 		.catch(e => $timeout(() => { alert(e); }, 50));
-
 		}
 	])
 
