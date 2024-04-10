@@ -1,0 +1,221 @@
+<!-- loginModal -->
+<div class="modal fade" 
+     id="loginModal" 
+     data-bs-backdrop="static" 
+     data-bs-keyboard="false" tabindex="-1" 
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content bg-dark border-1 border-white">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Bejelenkezés</h1>
+        <button type="button" class="btn-close btn-close-white me-3" 
+                data-bs-dismiss="modal" aria-label="Close">
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <form name="loginForm">
+          
+          <div class="row">
+            <div class="mb-3 col-12 col-sm-6">
+              <label for="email2" class="form-label">Email cím:</label>
+              <input type="text"
+                     class="form-control" 
+                     id="email2"
+                     name="email2"
+                     ng-model="model.email2"
+                     ng-init="model.email2=null"
+                     ng-pattern="/^([a-z0-9_.+-])+\@(([a-z0-9-])+\.)+([a-z0-9]{2,4})+$/"
+                     required>
+            </div>
+            <div class="mb-3 col-12 col-sm-6">
+              <label for="password2" class="form-label">Jelszó:</label>
+              <input type="password2"
+                     class="form-control" 
+                     id="password2"
+                     name="password2"
+                     ng-model="model.password2"
+                     ng-init="model.password2=null"
+                     required>
+            </div>
+          </div>
+          <hr>
+          <div class="mb-3 text-end">
+            <button type="button" class="btn btn-info mx-2 " 
+                    data-bs-dismiss="modal"
+                    data-bs-toggle="modal" 
+				            data-bs-target="#regisztracioModal">
+              Regisztráció
+            </button>
+            <button type="button" class=" btn btn-secondary mx-2 " data-bs-dismiss="modal">
+              Mégsem
+            </button>
+            <button type="button" class="btn btn-primary mx-2"
+                    ng-disabled="loginForm.$invalid"
+                    data-bs-dismiss="modal"
+                    ng-click="login()">
+              Bejelenkezés
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- regisztracioModal -->
+<div class="modal fade" 
+     id="regisztracioModal" 
+     data-bs-backdrop="static" 
+     data-bs-keyboard="false" tabindex="-1" 
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content bg-dark border-1 border-white">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Regisztráció</h1>
+        <button type="button" class="btn-close btn-close-white me-3" 
+                data-bs-dismiss="modal" aria-label="Close">
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <form name="registrationForm">
+          
+          <div class="row">
+            <div class="mb-3 col-12 col-sm-6">
+              <label for="last_name" class="form-label">Családinév:</label>
+              <input type="text" 
+                     class="form-control" 
+                     id="last_name"
+                     name="last_name"
+                     ng-model="model.last_name"
+                     ng-init="model.last_name=null"
+                     required>
+            </div>
+            <div class="mb-3 col-12 col-sm-6">
+              <label for="first_name" class="form-label">Keresztnév:</label>
+              <input type="text" 
+                       class="form-control" 
+                       id="first_name"
+                       name="first_name"
+                       ng-model="model.first_name"
+                       ng-init="model.first_name=null"
+                       required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="mb-3 col-12 col-sm-6">
+              <label for="email" class="form-label">Email cím:</label>
+              <input type="text"
+                     class="form-control" 
+                     id="email"
+                     name="email"
+                     ng-model="model.email"
+                     ng-init="model.email=null"
+                     ng-pattern="/^([a-z0-9_.+-])+\@(([a-z0-9-])+\.)+([a-z0-9]{2,4})+$/"
+                     required>
+            </div>
+            <div class="mb-3 col-12 col-sm-6">
+              <label for="password" class="form-label">Jelszó:</label>
+              <input type="password"
+                     class="form-control" 
+                     id="password"
+                     name="password"
+                     ng-model="model.password"
+                     ng-init="model.password=null"
+                     required>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="mb-3 col-12 col-sm-6">
+              <label for="phone" class="form-label">Telefonszám:</label>
+              <input type="tel" 
+                     class="form-control" 
+                     id="phone"
+                     name="phone"
+                     ng-model="model.phone"
+                     ng-init="model.phone=null"
+                     required>
+            </div>
+            <div class="mb-3 col-12 col-sm-6">
+              <label for="post_code" class="form-label">Írányítószám:</label>
+              <input type="text"
+                       class="form-control" 
+                       id="post_code"
+                       name="post_code"
+                       ng-model="model.post_code"
+                       ng-init="model.post_code=null"
+                       required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="mb-3 col-12 col-sm-6">
+              <label for="city" class="form-label">Település:</label>
+              <input type="text"
+                     class="form-control" 
+                     id="city"
+                     name="city"
+                     ng-model="model.city"
+                     ng-init="model.city=null"
+                     required>
+            </div>
+            <div class="mb-3 col-12 col-sm-6">
+              <label for="address" class="form-label">Cím:</label>
+              <input type="text" 
+                class="form-control" 
+                id="address"
+                name="address"
+                ng-model="model.address"
+                ng-init="model.address=null"
+                required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="mb-3 col-12 col-sm-6">
+              <label for="address" class="form-label">Születési dátum:</label>
+              <input type="date" 
+                class="form-control" 
+                id="date"
+                name="date"
+                ng-model="model.date"
+                ng-init="model.date=null"
+                required>
+            </div>
+		      </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" 
+                   type="checkbox" 
+                   value="" 
+                   id="roole"
+                   name="roole"
+                   ng-model="model.roole"
+                   ng-init="model.roole=null"
+                   required>
+            <label class="form-check-label" for="roole">
+              Megismertem és elfogadtam az Általános Szerződési Feltételeket
+            </label>
+          </div>
+          <hr>
+          <div class="mb-3 text-end">
+            <button type="button" class=" btn btn-info mx-2 " 
+                    data-bs-dismiss="modal"
+                    data-bs-toggle="modal" 
+				            data-bs-target="#loginModal">
+              Bejelenkezés
+            </button>
+            <button type="button" class=" btn btn-secondary mx-2 " data-bs-dismiss="modal">
+              Mégsem
+            </button>
+            <button type="button" class="btn btn-primary mx-2"
+                    ng-disabled="registrationForm.$invalid"
+                    data-bs-dismiss="modal"
+                    ng-click="regisztral()">
+              Regisztráció
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -26,6 +26,10 @@
 					},
 					'footer@root': {
 						templateUrl: './html/footer.html'
+					},
+					'user@root': {
+						templateUrl: './html/user.html',
+						controller: 'userController'
 					}
 				}
     })
@@ -118,6 +122,34 @@
 			$scope.$applyAsync();
 		})
 		.catch(e => $timeout(() => { alert(e); }, 50));
+		}
+	])
+
+	// User controller
+  .controller('userController', [
+  	'$scope',
+		'http',
+    function($scope, http) {
+			
+			$scope.login = () => {
+				let args = {
+					email: $scope.model.email2,
+					password: $scope.model.password2
+				}
+				http.request({
+					url: './php/login.php',
+					data: args
+				})
+				.then(response => {
+					console.log(response);
+					//$scope.$applyAsync();
+				})
+				.catch(e => $timeout(() => { alert(e); }, 50));
+			} 
+
+			$scope.regisztral = () => {
+				alert('regisztral')
+			}
 		}
 	])
 
