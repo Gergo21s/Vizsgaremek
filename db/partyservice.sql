@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Ápr 07. 18:49
+-- Létrehozás ideje: 2024. Ápr 10. 22:57
 -- Kiszolgáló verziója: 10.4.6-MariaDB
 -- PHP verzió: 7.3.8
 
@@ -164,6 +164,13 @@ CREATE TABLE `registration` (
   `address` varchar(50) NOT NULL,
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- A tábla adatainak kiíratása `registration`
+--
+
+INSERT INTO `registration` (`id`, `first_name`, `last_name`, `email`, `password`, `phone`, `post_code`, `city`, `address`, `date`) VALUES
+(1, 'Attila', 'Ódry', 'odry.attila@keri.mako.hu', '1234Aa', '3651561651', '6900', 'Szeged', 'Futrinka u. 66.', '1964-03-08');
 
 -- --------------------------------------------------------
 
@@ -382,6 +389,12 @@ ALTER TABLE `programs`
 --
 ALTER TABLE `promoters`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT a táblához `registration`
+--
+ALTER TABLE `registration`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT a táblához `reservation`

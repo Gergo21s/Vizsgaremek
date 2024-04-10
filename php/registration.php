@@ -14,9 +14,6 @@ $args = Util::getArgs();
 // Connect to database
 $db = new Database();
 
-// Set current datetime
-$args['date'] = date('Y-m-d H:i:s');
-
 // Merge arguments with default
 $args = Util::objMerge(array(
   "first_name" => null, 
@@ -49,4 +46,4 @@ if (!$result['affectedRows']) {
 }
 
 // Set response
-Util::setResponse("A regisztráció sikeresen megtörtént!");
+Util::setResponse($result);

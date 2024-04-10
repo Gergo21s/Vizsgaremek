@@ -100,19 +100,46 @@
 
   // Application run
   .run([
+		'$rootScope',
     'trans',
-    (trans) => {
+    ($rootScope, trans) => {
 
       // Transaction events
 			trans.events();
+
+			// Set user
+			$rootScope.user = {
+				id: null,
+				first_name: null, 
+				last_name: null, 
+				email: null, 
+				phone: null, 
+				post_code: null, 
+				city: null, 
+				address: null, 
+				date: null
+			};
+
+			// Logout
+			$rootScope.logout = () => {
+
+				if (confirm('Biztos kijelenkezik?')) {
+					
+					// Set user
+					Object.keys($rootScope.user).forEach((key) => {
+						$rootScope.user[key] = null;
+					});
+					$rootScope.$applyAsync();
+				}
+			}
     }
   ])
 
 	// Home controller
   .controller('homeController', [
     '$scope',
-	'$timeout',
-	'http',
+		'$timeout',
+		'http',
     function($scope, $timeout, http) {
 		http.request('./data/home.json')
 		.then(response => {
@@ -127,28 +154,108 @@
 
 	// User controller
   .controller('userController', [
+		'$rootScope',
   	'$scope',
 		'http',
-    function($scope, http) {
+		'util',
+    function($rootScope, $scope, http, util) {
 			
+			// Set model
+			$scope.model = {
+				first_name: null, 
+				last_name: null, 
+				email: null, 
+				password: null,
+				email2: localStorage.getItem('userEmailAddress'), 
+				password2: null,
+				phone: null, 
+				post_code: null, 
+				city: null, 
+				address: null, 
+				date: null,
+				roole: null
+			};
+
+			// Reset model
+			let reset = () => {
+				Object.keys($scope.model).forEach((key) => {
+					if (key === 'email2')
+								$scope.model[key] = localStorage.getItem('userEmailAddress');
+					else 	$scope.model[key] = null;
+				});
+				$scope.$applyAsync();
+			};
+
+			// Login
 			$scope.login = () => {
+
+				// Set arguments
 				let args = {
 					email: $scope.model.email2,
 					password: $scope.model.password2
 				}
+
+				// Reset model
+				reset();
+
+				// Http request
 				http.request({
 					url: './php/login.php',
 					data: args
 				})
 				.then(response => {
-					console.log(response);
-					//$scope.$applyAsync();
+
+					// Set born date
+					response.date = moment(response.date).toDate();
+
+					// Save in local storige email address
+					localStorage.setItem('userEmailAddress', args.email);
+
+					// Set user
+					Object.keys($rootScope.user).forEach((key) => {
+						if (key === 'email')
+									$scope.user[key] = args.email;
+						else 	$scope.user[key] = response[key];
+					});
+					$rootScope.$applyAsync();
 				})
 				.catch(e => $timeout(() => { alert(e); }, 50));
 			} 
 
+			// Register
 			$scope.regisztral = () => {
-				alert('regisztral')
+
+				// Set arguments
+				let args = 	util.objFilterByKeys($scope.model, [
+											'email2', 'password2', 'roole'
+										], false);
+				
+				// Convert born day
+				args.date = moment(args.date).format('YYYY-MM-DD');						
+				
+				// Reset model
+				reset();
+
+				// Http request
+				http.request({
+					url: './php/registration.php',
+					data: args
+				})
+				.then(response => {
+
+					// Set user identifier
+					args.id = response.lastInsertId;
+
+					// Set born date
+					args.date = moment(args.date).toDate();
+
+					// Set user
+					Object.keys($rootScope.user).forEach((key) => {
+						$scope.user[key] = args[key];
+					});
+					$rootScope.$applyAsync();
+				})
+				.catch(e => $timeout(() => { alert(e); }, 50));
 			}
 		}
 	])

@@ -77,9 +77,17 @@
 				id="regisztracio"
 				data-bs-toggle="modal" 
 				data-bs-target="#loginModal"
-				ng-click="regisztralas($event)"
-				data-index="{{$index}}"
-				class="btn btn-outline-dark">
+				class="btn btn-outline-dark"
+				ng-if="!$root.user.id">
+				<img src="img/ikon/profile-removebg-preview.png" id="ikon">
+			</button>
+
+			<!-- Kijelenkezés ikon -->
+			<button 
+				id="kijelenkezes"
+				class="btn btn-outline-dark"
+				ng-if="$root.user.id"
+				ng-click="logout()">
 				<img src="img/ikon/profile-removebg-preview.png" id="ikon">
 			</button>
 		</div>
