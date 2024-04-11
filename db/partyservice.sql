@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Ápr 11. 10:36
+-- Létrehozás ideje: 2024. Ápr 11. 13:21
 -- Kiszolgáló verziója: 10.4.6-MariaDB
 -- PHP verzió: 7.3.8
 
@@ -55,8 +55,8 @@ INSERT INTO `dishes` (`id`, `dish_category_id`, `name`, `description`, `price`) 
 (12, 2, 'Zsírjában sült libamáj kenyérkrutonon, lilahagymával', 'Libamáj, pirított kenyér, lilahagyma, lilakáposzta', 7140),
 (13, 2, 'Magyaros borjúgulyás gazdagon zöldségelve', 'Borjúhús, répa, petrezselyem, pirospaprika, burgonya', 3190),
 (14, 2, 'Baconnal, zöldpaprikával és sajttal töltött pulykamell,\r\nzöldséges jázmin rizzsel tálalva, (csípős)', 'Pulykamell, bacon, feta sajt, jázmin rizs', 4390),
-(15, 2, 'Sertés szűzpecsenye libamájjal, burgonyarösztivel', 'Sertés szűzpecsenye, libamáj, burgonya', 10990),
-(16, 2, 'Grill tál', 'Egészben sült sertés szűzpecsenye pikánsan, grillezett kézműves sajt, roston sült fogas-file, fűszeres\r\ncsirkeszárny, serpenyős zöldségek, steak burgonya, BBQ mártogatóssal', 10990);
+(15, 2, 'Sertés szűzpecsenye libamájjal, burgonyarösztivel', 'Sertés szűzpecsenye, libamáj, burgonya', 8990),
+(16, 2, 'Grill tál', 'Egészben sült sertés szűzpecsenye pikánsan, grillezett kézműves sajt, roston sült fogas-file, fűszeres\r\ncsirkeszárny, serpenyős zöldségek, steak burgonya, BBQ mártogatóssal', 9990);
 
 -- --------------------------------------------------------
 

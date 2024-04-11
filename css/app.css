@@ -13,7 +13,16 @@
 	background-color: black;
 	color: #FF00FF;
 }
-
+#tablazat{
+	background-color: black;
+	color: #FF00FF;
+}
+.szegely{
+	border: 1px solid #FF00FF;
+}
+.nev{
+	color: #FF00FF;
+}
 .home
 {
 	border: 1px solid #FF00FF;
