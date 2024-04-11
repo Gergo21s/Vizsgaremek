@@ -14,17 +14,9 @@ $db = new Database();
 // Set query drinks
 $query = "SELECT `name`, 
                  `description`, 
-                 `price`
+                 `price`,
+                 `dish_category_id`
             FROM `dishes`
-            WHERE `dish_category_id` = 1
-            ORDER BY `id`;";
-
-// Set query menu
-$query = "SELECT `name`, 
-                 `description`, 
-                 `price`
-            FROM `dishes`
-            WHERE `dish_category_id` = 2
             ORDER BY `id`;";
 
 // Execute query

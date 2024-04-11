@@ -141,14 +141,24 @@
 		'$timeout',
 		'http',
     function($scope, $timeout, http) {
-		http.request('./data/home.json')
-		.then(response => {
-	
-			// Set data, and apply change
-			$scope.data = response;
-			$scope.$applyAsync();
-		})
-		.catch(e => $timeout(() => { alert(e); }, 50));
+
+			http.request('./data/home.json')
+			.then(response => {
+		
+				// Set data, and apply change
+				$scope.data = response;
+				$scope.$applyAsync();
+			})
+			.catch(e => $timeout(() => { alert(e); }, 50));
+
+			http.request('./php/dishes.php')
+			.then(response => {
+		
+				// Set data, and apply change
+				$scope.dishes = response;
+				$scope.$applyAsync();
+			})
+			.catch(e => $timeout(() => { alert(e); }, 50));
 		}
 	])
 
@@ -515,6 +525,7 @@
 			
 			// Information
 			$scope.info = (event) => {
+				alert('sddssd');
 				let btn = event.currentTarget;
 				$scope.dataIndex = parseInt(btn.dataset.index);
 				//Mi jelenjen meg abban a mezőben, amelyre mutatunk, 
@@ -546,7 +557,20 @@
 			})
 			.catch(e => $timeout(() => { alert(e); }, 50));
 
-			
+			http.request('./data/hazirend.json')
+			.then(response => {
+		
+				// Set data, and apply change
+				$scope.hazirend = response;
+				$scope.$applyAsync();
+			})
+
+			// Information
+			$scope.info = (event) => {
+				let btn = event.currentTarget;
+				$scope.dataIndex = parseInt(btn.dataset.index);
+				$scope.$applyAsync();
+			};
 		}
 	])
 

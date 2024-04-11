@@ -76,7 +76,7 @@
                      class="form-control" 
                      id="info"
                      name="info"
-                     ng-model="model.info"
+                     value="{{data[dataIndex].date}}"
                      disabled>
             </div>
           </div>
@@ -86,21 +86,73 @@
             <div class="col-sm-8">
               <h5 class="mt-2">Fellépők:</h5>
                 <ul class="list-group">
-                  <li class="list-group-item fellepo1">{{x.fellepo1}}</li>
-                  <li class="list-group-item fellepo2">{{x.fellepo2}}</li>
-                  <li class="list-group-item fellepo3">{{x.fellepo3}}</li>
-                  <li class="list-group-item fellepo4">{{x.fellepo4}}</li>
-                  <li class="list-group-item fellepo5">{{x.fellepo5}}</li>
+                  <li class="list-group-item fellepo1">{{data[dataIndex].fellepo1}}</li>
+                  <li class="list-group-item fellepo2">{{data[dataIndex].fellepo2}}</li>
+                  <li class="list-group-item fellepo3">{{data[dataIndex].fellepo3}}</li>
+                  <li class="list-group-item fellepo4">{{data[dataIndex].fellepo4}}</li>
+                  <li class="list-group-item fellepo5">{{data[dataIndex].fellepo5}}</li>
                 </ul>
-              <p>{{x.text}}</p>
-              <p>Dress control: {{x.dress}}</p>
-              <p>{{x.ticket}} </p>
-              <a class="btn btn-outline-dark lh-1 gombok mt-2" 
-              ui-sref="hazirend">Házirend</a>
+              <p>{{data[dataIndex].text}}</p>
+              <p>Dress control: {{data[dataIndex].dress}}</p>
+              <p>{{data[dataIndex].ticket}} </p>
+              <button class="btn btn-outline-dark lh-1 gombok mt-2" 
+                      data-bs-toggle="modal" 
+                      data-bs-target="#hazirendModal">
+                 Házirend
+              </button>
             </div>
           </div>
         </div>
       </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Bezárás</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" 
+      id="hazirendModal" 
+      data-bs-backdrop="static" 
+      data-bs-keyboard="false" tabindex="-1" 
+      aria-labelledby="staticBackdropLabel" aria-hidden="true">
+   <div class="modal-dialog modal-dialog-scrollable modal-xl">
+     <div class="modal-content bg-dark border-1 border-white">
+       <div class="modal-header">
+         <h1 class="modal-title fs-5" id="staticBackdropLabel">Házirend</h1>
+         <button type="button" class="btn-close btn-close-white me-3" 
+                 data-bs-dismiss="modal" aria-label="Close">
+         </button>
+       </div>
+
+
+      <div class="modal-body" >
+        <div class="col-md" ng-repeat="x in hazirend track by $index">
+          <h3>Házirend</h3>
+          <ol>
+            <li>{{x.leiras1}}</li> 
+            <br>
+            <li>{{x.leiras2}}</li>
+            <br>
+            <li>{{x.leiras3}}</li> 
+            <br>
+            <li>{{x.leiras4}}</li> 
+            <br>
+            <li>{{x.leiras5}}</li> 
+            <br>
+            <li>{{x.leiras6}}</li> 
+            <br>
+            <li>{{x.leiras7}}</li>
+            <br> 
+            <li>{{x.leiras8}}</li>
+            <br> 
+            <li>{{x.leiras9}}</li>
+            <br> 
+            <li>{{x.leiras10}}</li>  
+          </ol>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Bezárás</button>

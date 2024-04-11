@@ -252,11 +252,12 @@
                 <th>Ár</th>
               </tr>
             </thead>
-            <tbody ng-repeat="x in data track by $index">
-              <tr>
-                <td class="text-start">{{name}}</td>
-                <td class="text-start">{{description}}</td>
-                <td class="text-end">{{price}} Ft</td>
+            <tbody>
+              <tr ng-repeat="x in dishes track by $index"
+                  ng-if="x.dish_category_id === 2">
+                <td class="text-start">{{x.name}}</td>
+                <td class="text-start">{{x.description}}</td>
+                <td class="text-end">{{x.price}} Ft</td>
               </tr>
               <!-- <tr>
                 <td class="text-start">1</td>
@@ -306,13 +307,12 @@
               <th>Ár</th>
             </tr>
           </thead>
-          <tbody ng-repeat="x in data track by $index">
-            <tr>
-              <tr>
-                <td class="text-start">{{name}}</td>
-                <td class="text-start">{{description}}</td>
-                <td class="text-end">{{price}} Ft</td>
-              </tr>
+          <tbody>
+            <tr ng-repeat="x in dishes track by $index"
+                ng-if="x.dish_category_id === 1">
+              <td class="text-start">{{x.name}}</td>
+              <td class="text-start">{{x.description}}</td>
+              <td class="text-end">{{x.price}} Ft</td>
             </tr>
             <!-- <tr>
                 <td class="text-start">1</td>

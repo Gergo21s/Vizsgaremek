@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Ápr 10. 22:57
+-- Létrehozás ideje: 2024. Ápr 11. 10:36
 -- Kiszolgáló verziója: 10.4.6-MariaDB
 -- PHP verzió: 7.3.8
 
@@ -66,6 +66,7 @@ INSERT INTO `dishes` (`id`, `dish_category_id`, `name`, `description`, `price`) 
 
 CREATE TABLE `information` (
   `id` int(2) NOT NULL,
+  `program_id` int(11) NOT NULL,
   `type_id` int(5) NOT NULL,
   `text` varchar(250) DEFAULT NULL,
   `dress` varchar(250) DEFAULT NULL,
@@ -76,16 +77,16 @@ CREATE TABLE `information` (
 -- A tábla adatainak kiíratása `information`
 --
 
-INSERT INTO `information` (`id`, `type_id`, `text`, `dress`, `ticket`) VALUES
-(1, 1, 'A beléptetés jogát a biztonsági szolgálat fenntartja!', 'cool & elegant', 'A belépőjegy egyszeri belépésre jogosít'),
-(2, 2, 'A beléptetés jogát a biztonsági szolgálat fenntartja!', 'cool & elegant', 'A belépőjegy egyszeri belépésre jogosít'),
-(3, 3, 'A beléptetés jogát a biztonsági szolgálat fenntartja!', 'cool & elegant', 'A belépőjegy egyszeri belépésre jogosít'),
-(4, 4, 'A beléptetés jogát a biztonsági szolgálat fenntartja!', 'cool & elegant', 'A belépőjegy egyszeri belépésre jogosít'),
-(5, 5, 'A beléptetés jogát a biztonsági szolgálat fenntartja!', 'cool & elegant', 'A belépőjegy egyszeri belépésre jogosít'),
-(6, 6, 'A beléptetés jogát a biztonsági szolgálat fenntartja!', 'cool & elegant', 'A belépőjegy egyszeri belépésre jogosít'),
-(7, 7, 'A beléptetés jogát a biztonsági szolgálat fenntartja!', 'cool & elegant', 'A belépőjegy egyszeri belépésre jogosít'),
-(8, 8, 'A beléptetés jogát a biztonsági szolgálat fenntartja!', 'cool & elegant', 'A belépőjegy egyszeri belépésre jogosít'),
-(9, 9, 'A beléptetés jogát a biztonsági szolgálat fenntartja!', 'cool & elegant', 'A belépőjegy egyszeri belépésre jogosít');
+INSERT INTO `information` (`id`, `program_id`, `type_id`, `text`, `dress`, `ticket`) VALUES
+(1, 1, 1, 'A beléptetés jogát a biztonsági szolgálat fenntartja!', 'cool & elegant', 'A belépőjegy egyszeri belépésre jogosít'),
+(2, 2, 2, 'A beléptetés jogát a biztonsági szolgálat fenntartja!', 'cool & elegant', 'A belépőjegy egyszeri belépésre jogosít'),
+(3, 3, 3, 'A beléptetés jogát a biztonsági szolgálat fenntartja!', 'cool & elegant', 'A belépőjegy egyszeri belépésre jogosít'),
+(4, 4, 4, 'A beléptetés jogát a biztonsági szolgálat fenntartja!', 'cool & elegant', 'A belépőjegy egyszeri belépésre jogosít'),
+(5, 5, 5, 'A beléptetés jogát a biztonsági szolgálat fenntartja!', 'cool & elegant', 'A belépőjegy egyszeri belépésre jogosít'),
+(6, 6, 6, 'A beléptetés jogát a biztonsági szolgálat fenntartja!', 'cool & elegant', 'A belépőjegy egyszeri belépésre jogosít'),
+(7, 7, 7, 'A beléptetés jogát a biztonsági szolgálat fenntartja!', 'cool & elegant', 'A belépőjegy egyszeri belépésre jogosít'),
+(8, 8, 8, 'A beléptetés jogát a biztonsági szolgálat fenntartja!', 'cool & elegant', 'A belépőjegy egyszeri belépésre jogosít'),
+(9, 9, 9, 'A beléptetés jogát a biztonsági szolgálat fenntartja!', 'cool & elegant', 'A belépőjegy egyszeri belépésre jogosít');
 
 -- --------------------------------------------------------
 
