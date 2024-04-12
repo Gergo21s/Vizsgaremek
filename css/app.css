@@ -108,4 +108,11 @@ ul li a{
 	text-align: justify;
 	transform: rotateY(180deg);
 }
+.tabla
+{
+	background-color: black; 
+	color: #FF00FF
+}
+.arhossz
+{width: 75px;}
 

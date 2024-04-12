@@ -243,7 +243,7 @@
          aria-labelledby="tab-1-tab">
 
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 mx-auto">
-          <table class="table table-bordered table-striped table-sm mt-3">
+          <table class="table-bordered table-sm mt-3">
             <caption class="caption-top text-center"></caption>
             <thead class="table-dark">
               <tr>
@@ -255,35 +255,10 @@
             <tbody>
               <tr ng-repeat="x in dishes track by $index"
                   ng-if="x.dish_category_id === 2">
-                <td class="text-start">{{x.name}}</td>
-                <td class="text-start">{{x.description}}</td>
-                <td class="text-end">{{x.price}} Ft</td>
+                <td class="text-start tabla">{{x.name}}</td>
+                <td class="text-start tabla">{{x.description}}</td>
+                <td class="text-end tabla arhossz">{{x.price}} Ft</td>
               </tr>
-              <!-- <tr>
-                <td class="text-start">1</td>
-                <td class="text-start">Lorem ipsum dolor sit amet</td>
-                <td class="text-end">255 221</td>
-              </tr>
-              <tr>
-                <td class="text-start">1</td>
-                <td class="text-start">Lorem ipsum dolor sit amet</td>
-                <td class="text-end">255 221</td>
-              </tr>
-              <tr>
-                <td class="text-start">1</td>
-                <td class="text-start">Lorem ipsum dolor sit amet</td>
-                <td class="text-end">255 221</td>
-              </tr>
-              <tr>
-                <td class="text-start">1</td>
-                <td class="text-start">Lorem ipsum dolor sit amet</td>
-                <td class="text-end">255 221</td>
-              </tr>
-              <tr>
-                <td class="text-start">1</td>
-                <td class="text-start">Lorem ipsum dolor sit amet</td>
-                <td class="text-end">255 221</td>
-              </tr> -->
             </tbody>
           </table>
          </div>
@@ -298,7 +273,7 @@
          aria-labelledby="tab-2-tab">
 
       <div class="col-12 col-sm-11 col-md-10 col-lg-8 mx-auto">
-        <table class="table table-bordered table-striped table-sm mt-3">
+        <table class="table-bordered table-sm mt-3">
           <caption class="caption-top text-center"></caption>
           <thead class="table-dark">
             <tr>
@@ -310,35 +285,10 @@
           <tbody>
             <tr ng-repeat="x in dishes track by $index"
                 ng-if="x.dish_category_id === 1">
-              <td class="text-start">{{x.name}}</td>
-              <td class="text-start">{{x.description}}</td>
-              <td class="text-end">{{x.price}} Ft</td>
+              <td class="text-start tabla">{{x.name}}</td>
+              <td class="text-start tabla">{{x.description}}</td>
+              <td class="text-end tabla arhossz">{{x.price}} Ft</td>
             </tr>
-            <!-- <tr>
-                <td class="text-start">1</td>
-                <td class="text-start">Lorem ipsum dolor sit amet</td>
-                <td class="text-end">255 221</td>
-            </tr>
-            <tr>
-                <td class="text-start">1</td>
-                <td class="text-start">Lorem ipsum dolor sit amet</td>
-                <td class="text-end">255 221</td>
-            </tr>
-            <tr>
-                <td class="text-start">1</td>
-                <td class="text-start">Lorem ipsum dolor sit amet</td>
-                <td class="text-end">255 221</td>
-            </tr>
-            <tr>
-                <td class="text-start">1</td>
-                <td class="text-start">Lorem ipsum dolor sit amet</td>
-                <td class="text-end">255 221</td>
-            </tr>
-            <tr>
-                <td class="text-start">1</td>
-                <td class="text-start">Lorem ipsum dolor sit amet</td>
-                <td class="text-end">255 221</td>
-            </tr> -->
           </tbody>
         </table>
        </div>
