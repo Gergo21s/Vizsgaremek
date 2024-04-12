@@ -75,6 +75,7 @@
               <input type="text" 
                      class="form-control" 
                      id="info"
+                     style="background-color: black;color:#FF00FF"
                      name="info"
                      value="{{data[dataIndex].date}}"
                      disabled>
@@ -86,11 +87,11 @@
             <div class="col-sm-8">
               <h5 class="mt-2">Fellépők:</h5>
                 <ul class="list-group">
-                  <li class="list-group-item fellepo1">{{data[dataIndex].fellepo1}}</li>
-                  <li class="list-group-item fellepo2">{{data[dataIndex].fellepo2}}</li>
-                  <li class="list-group-item fellepo3">{{data[dataIndex].fellepo3}}</li>
-                  <li class="list-group-item fellepo4">{{data[dataIndex].fellepo4}}</li>
-                  <li class="list-group-item fellepo5">{{data[dataIndex].fellepo5}}</li>
+                  <li class="list-group-item fellepo1 information">{{data[dataIndex].fellepo1}}</li>
+                  <li class="list-group-item fellepo2 information">{{data[dataIndex].fellepo2}}</li>
+                  <li class="list-group-item fellepo3 information">{{data[dataIndex].fellepo3}}</li>
+                  <li class="list-group-item fellepo4 information">{{data[dataIndex].fellepo4}}</li>
+                  <li class="list-group-item fellepo5 information">{{data[dataIndex].fellepo5}}</li>
                 </ul>
               <p>{{data[dataIndex].text}}</p>
               <p>Dress control: {{data[dataIndex].dress}}</p>
