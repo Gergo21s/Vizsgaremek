@@ -1,2 +1,3 @@
 bejelentkező nevének kiírása
 asztalfoglaláshoz időpont
+felgomb
