@@ -282,6 +282,7 @@
 			// Set data index, and model for input
 			$scope.dataIndex = null;
 			$scope.model = {};
+			$scope.currDate = moment().format('YYYY-MM-DD');
 
 			// Get data
 			http.request('./php/reservation_type.php')
@@ -326,11 +327,13 @@
 					'table'
 				], false);
 
-				// Set type identifier
+				// Set type identifier, convert date
 				args.type_id = $scope.data[$scope.dataIndex].id;
+				args.date = moment(args.date).format('YYYY-MM-DD');
 
 				// Request to the server
 				http.request({
+					method: 'POST',
 					url: './php/reservation.php',
 					data: args
 				})

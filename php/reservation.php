@@ -15,7 +15,7 @@ $args = Util::getArgs();
 $db = new Database();
 
 // Set current datetime
-$args['date'] = date('Y-m-d H:i:s');
+$args['created'] = date('Y-m-d H:i:s');
 
 // Merge arguments with default
 $args = Util::objMerge(array(
@@ -27,14 +27,15 @@ $args = Util::objMerge(array(
   "post_code" => null, 
   "city" => null, 
   "address" => null, 
-  "message" => null, 
-  "date" => null
+  "message" => null,
+  "date" => null,
+  "created" => null
 ), $args, true);
 
 // Set query
 $query = "INSERT INTO `reservation` 
           (`type_id`, `last_name`, `first_name`, `email`, `phone`, 
-           `post_code`, `city`, `address`, `message`, `date`) VALUES";
+           `post_code`, `city`, `address`, `message`, `date`, `created`) VALUES";
 
 // Execute query with arguments
 $result = $db->execute($query, $args);

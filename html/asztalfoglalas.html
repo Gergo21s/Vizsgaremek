@@ -19,8 +19,7 @@
             </h5> 
             <p>{{x.description}}</p> 
             <h4>{{x.price}} </h4>
-            <button id="foglal"
-                    data-bs-toggle="modal" 
+            <button data-bs-toggle="modal" 
                     data-bs-target="#foglalasiUrlap"
                     ng-click="foglalas($event)"
                     data-index="{{$index}}">
@@ -108,6 +107,17 @@
                      name="table"
                      ng-model="model.table"
                      disabled>
+            </div>
+            <div class="mb-3 col-12 col-sm-6">
+              <label for="date" class="form-label">Dátum:</label>
+              <input type="date" 
+                       class="form-control" 
+                       id="date"
+                       name="date"
+                       ng-model="model.date"
+                       ng-init="model.date=null"
+                       min="{{currDate}}"
+                       required>
             </div>
           </div>
           <div class="row">

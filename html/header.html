@@ -68,28 +68,25 @@
 				</li>
 			</ul>
 
-			<!-- Kosár ikon -->
-			<!-- <img src="img/ikon/shopping-basket-removebg-preview.png" 
-				 	id="ikon" class="pe-2"> -->
-			<!-- Bejelentkezés ikon -->
-			{{registration.first_name}}{{registration.last_name}}
+			<!-- User -->
+			<span ng-if="$root.user.id">
+				{{$root.user.last_name}} {{$root.user.first_name}}
+			</span>
 			<button 
 				id="regisztracio"
 				data-bs-toggle="modal" 
 				data-bs-target="#loginModal"
 				class="btn btn-outline-dark"
 				ng-if="!$root.user.id">
-				<img src="img/ikon/profile-removebg-preview.png" id="ikon">
+				<img src="img/ikon/profile-removebg-preview.png" class="ikon">
 			</button>
-
-			<!-- Kijelenkezés ikon -->
 			<button 
 				id="kijelenkezes"
 				class="btn btn-outline-dark"
 				ng-if="$root.user.id"
 				ng-click="logout()">
-				<img src="img/ikon/profile-removebg-preview.png" id="ikon">
-			</button>
+				<img src="img/ikon/profile-removebg-preview.png" class="ikon">
+			</button> 
 		</div>
 	</div>
 </nav>

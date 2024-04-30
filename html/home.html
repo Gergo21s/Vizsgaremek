@@ -254,7 +254,7 @@
             </thead>
             <tbody>
               <tr ng-repeat="x in dishes track by $index"
-                  ng-if="x.dish_category_id === 2">
+                  ng-if="x.dish_category_id === '2'">
                 <td class="text-start tabla">{{x.name}}</td>
                 <td class="text-start tabla">{{x.description}}</td>
                 <td class="text-end tabla arhossz">{{x.price}} Ft</td>
@@ -284,7 +284,7 @@
           </thead>
           <tbody>
             <tr ng-repeat="x in dishes track by $index"
-                ng-if="x.dish_category_id === 1">
+                ng-if="x.dish_category_id === '1'">
               <td class="text-start tabla">{{x.name}}</td>
               <td class="text-start tabla">{{x.description}}</td>
               <td class="text-end tabla arhossz">{{x.price}} Ft</td>
