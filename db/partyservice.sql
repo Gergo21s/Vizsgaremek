@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Ápr 11. 13:21
+-- Létrehozás ideje: 2024. Ápr 30. 10:19
 -- Kiszolgáló verziója: 10.4.6-MariaDB
 -- PHP verzió: 7.3.8
 
@@ -182,6 +182,7 @@ INSERT INTO `registration` (`id`, `first_name`, `last_name`, `email`, `password`
 CREATE TABLE `reservation` (
   `id` int(5) NOT NULL,
   `type_id` int(3) NOT NULL,
+  `date` date NOT NULL,
   `last_name` varchar(30) NOT NULL,
   `first_name` varchar(30) NOT NULL,
   `email` varchar(30) NOT NULL,
@@ -190,20 +191,21 @@ CREATE TABLE `reservation` (
   `city` varchar(20) NOT NULL,
   `address` varchar(50) NOT NULL,
   `message` text DEFAULT NULL,
-  `date` datetime NOT NULL
+  `created` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- A tábla adatainak kiíratása `reservation`
 --
 
-INSERT INTO `reservation` (`id`, `type_id`, `last_name`, `first_name`, `email`, `phone`, `post_code`, `city`, `address`, `message`, `date`) VALUES
-(1, 1, 'Bálint', 'Martin', 'valami@gmail.com', '34556778', '1234', 'FÖldeák', 'Ady Endre utca 56.', 'Valami buli', '2024-03-07 09:42:57'),
-(2, 1, 'Kiss', 'Patrik', 'patrik@gmail.com', '234546547', '6922', 'Földeák', 'Szent László tér 18.', 'Nagyon jók a szolgáltatások', '2024-03-25 10:05:54'),
-(3, 3, 'Szabó', 'Lajos', 'szabo@gmail.com', '06302878726', '5544', 'Ózd', 'Orgona utca 6.', NULL, '2024-04-04 11:05:22'),
-(4, 1, 'Kiss', 'Jenő', 'kissamail@gmail.com', '06304958488', '6900', 'Makó', 'Alkotmány utca 2.', 'Nem szeretnénk légkondi közelében ülni.', '2024-04-05 16:18:37'),
-(5, 4, 'Kiss', 'Andrea', 'kissamail@gmail.com', '06302360141', '6900', 'Makó', 'Alkotmány utca 2.', 'Sokan leszünk.', '2024-04-07 07:40:51'),
-(6, 2, 'Szabó', 'Elvíra', 'szaboelvira@gmail.com', '06301258745', '6900', 'Makó', 'Szentháromság utca 62.', 'A kedvenc asztalunk.', '2024-04-07 13:51:01');
+INSERT INTO `reservation` (`id`, `type_id`, `date`, `last_name`, `first_name`, `email`, `phone`, `post_code`, `city`, `address`, `message`, `created`) VALUES
+(1, 1, '2024-03-20', 'Bálint', 'Martin', 'valami@gmail.com', '34556778', '1234', 'FÖldeák', 'Ady Endre utca 56.', 'Valami buli', '2024-03-07 09:42:57'),
+(2, 1, '2024-03-20', 'Kiss', 'Patrik', 'patrik@gmail.com', '234546547', '6922', 'Földeák', 'Szent László tér 18.', 'Nagyon jók a szolgáltatások', '2024-03-25 10:05:54'),
+(3, 3, '2024-03-20', 'Szabó', 'Lajos', 'szabo@gmail.com', '06302878726', '5544', 'Ózd', 'Orgona utca 6.', NULL, '2024-04-04 11:05:22'),
+(4, 1, '2024-03-20', 'Kiss', 'Jenő', 'kissamail@gmail.com', '06304958488', '6900', 'Makó', 'Alkotmány utca 2.', 'Nem szeretnénk légkondi közelében ülni.', '2024-04-05 16:18:37'),
+(5, 4, '2024-03-20', 'Kiss', 'Andrea', 'kissamail@gmail.com', '06302360141', '6900', 'Makó', 'Alkotmány utca 2.', 'Sokan leszünk.', '2024-04-07 07:40:51'),
+(6, 2, '2024-03-20', 'Szabó', 'Elvíra', 'szaboelvira@gmail.com', '06301258745', '6900', 'Makó', 'Szentháromság utca 62.', 'A kedvenc asztalunk.', '2024-04-07 13:51:01'),
+(7, 4, '2024-05-11', 'Kovács', 'Péter', 'kristof@citromail.hu', '+36 30 999 4444', '6900', 'Makó', 'Maroslele', '50 fő', '2024-04-30 10:04:55');
 
 -- --------------------------------------------------------
 
@@ -401,7 +403,7 @@ ALTER TABLE `registration`
 -- AUTO_INCREMENT a táblához `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT a táblához `reservation_type`
