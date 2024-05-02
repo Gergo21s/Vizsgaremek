@@ -1,3 +1,0 @@
-bejelentkező nevének kiírása	OK
-asztalfoglaláshoz időpont 	OK
-Étlap. itallap   OK
