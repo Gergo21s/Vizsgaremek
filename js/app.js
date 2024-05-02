@@ -166,9 +166,10 @@
   .controller('userController', [
 		'$rootScope',
   	'$scope',
+		'$timeout',
 		'http',
 		'util',
-    function($rootScope, $scope, http, util) {
+    function($rootScope, $scope, $timeout, http, util) {
 			
 			// Set model
 			$scope.model = {
