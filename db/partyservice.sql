@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Ápr 30. 10:19
+-- Létrehozás ideje: 2024. Máj 02. 07:33
 -- Kiszolgáló verziója: 10.4.6-MariaDB
 -- PHP verzió: 7.3.8
 
@@ -108,15 +108,15 @@ CREATE TABLE `programs` (
 --
 
 INSERT INTO `programs` (`id`, `img`, `date`, `time`, `price`, `description`) VALUES
-(1, 'kep1_meret.png', '2024.05.01. Péntek', '22:00 - 05:00', 3000, 'Normál jegy (soron kívüli bejutással)'),
-(2, 'kep2_meret.png', '2024.05.12. Vasárnap', '20:00 - 04:00', 5000, 'Normál jegy (soron kívüli bejutással)'),
-(3, 'kep3_meret.png', '2024.05.22. Szerda', '22:00 - 06:00', 3500, 'Normál jegy (soron kívüli bejutással)'),
-(4, 'kep4_meret.png', '2024.05.30. Csütörtök', '22:00 - 05:00', 3200, 'Normál jegy (soron kívüli bejutással)'),
-(5, 'kep5_meret.png', '2024.06.02. Vasárnap', '23:00 - 04:00', 4000, 'Normál jegy (soron kívüli bejutással)'),
-(6, 'kep6_meret.png', '2024.06.12. Szerda', '22:00 - 03:00', 4200, 'Normál jegy (soron kívüli bejutással)'),
-(7, 'kep7_meret.png', '2024.06.20. Csütörtök', '22:00 - 05:00', 4500, 'Normál jegy (soron kívüli bejutással)'),
-(8, 'kep8_meret.png', '2024.07.01 Hétfő', '20:00 - 03:00', 3000, 'Normál jegy (soron kívüli bejutással)'),
-(9, 'kep9_meret.png', '2024.07.13. Szombat', '20:00 - 04:30 ', 4500, 'Normál jegy (soron kívüli bejutással)');
+(1, 'kep1_meret.png', '2024.06.01 Szombat', '22:00 - 05:00', 3000, 'Normál jegy (soron kívüli bejutással)'),
+(2, 'kep2_meret.png', '2024.06.09 Vasárnap', '20:00 - 04:00', 5000, 'Normál jegy (soron kívüli bejutással)'),
+(3, 'kep3_meret.png', '2024.06.16 Vasárnap', '22:00 - 06:00', 3500, 'Normál jegy (soron kívüli bejutással)'),
+(4, 'kep4_meret.png', '2024.06.22 Szombat', '22:00 - 05:00', 3200, 'Normál jegy (soron kívüli bejutással)'),
+(5, 'kep5_meret.png', '2024.06.30 Vasárnap', '23:00 - 04:00', 4000, 'Normál jegy (soron kívüli bejutással)'),
+(6, 'kep6_meret.png', '2024.07.06 Szombat', '22:00 - 03:00', 4200, 'Normál jegy (soron kívüli bejutással)'),
+(7, 'kep7_meret.png', '2024.07.14 Vasárnap', '22:00 - 05:00', 4500, 'Normál jegy (soron kívüli bejutással)'),
+(8, 'kep8_meret.png', '2024.07.20 Szombat', '20:00 - 03:00', 3000, 'Normál jegy (soron kívüli bejutással)'),
+(9, 'kep9_meret.png', '2024.07.27 Szombat', '20:00 - 04:30 ', 4500, 'Normál jegy (soron kívüli bejutással)');
 
 -- --------------------------------------------------------
 
