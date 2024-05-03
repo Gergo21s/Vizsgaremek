@@ -8,4 +8,6 @@
 - https://pixabay.com/hu/
 - https://unsplash.com/
 
+Projektfelelős: Kányási Dávid
+
 
