@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2024. Máj 02. 07:33
+-- Létrehozás ideje: 2024. Máj 03. 11:27
 -- Kiszolgáló verziója: 10.4.6-MariaDB
 -- PHP verzió: 7.3.8
 
@@ -171,7 +171,8 @@ CREATE TABLE `registration` (
 --
 
 INSERT INTO `registration` (`id`, `first_name`, `last_name`, `email`, `password`, `phone`, `post_code`, `city`, `address`, `date`) VALUES
-(1, 'Attila', 'Ódry', 'odry.attila@keri.mako.hu', '1234Aa', '3651561651', '6900', 'Szeged', 'Futrinka u. 66.', '1964-03-08');
+(1, 'Attila', 'Ódry', 'odry.attila@keri.mako.hu', '1234Aa', '3651561651', '6900', 'Szeged', 'Futrinka u. 66.', '1964-03-08'),
+(2, 'Gergő', 'Bálint', 'gergo99215@gmail.com', '123456', '06302878726', '6922', 'Földeák', 'Ady Endre utca 56.', '2005-01-21');
 
 -- --------------------------------------------------------
 
@@ -199,8 +200,6 @@ CREATE TABLE `reservation` (
 --
 
 INSERT INTO `reservation` (`id`, `type_id`, `date`, `last_name`, `first_name`, `email`, `phone`, `post_code`, `city`, `address`, `message`, `created`) VALUES
-(1, 1, '2024-03-20', 'Bálint', 'Martin', 'valami@gmail.com', '34556778', '1234', 'FÖldeák', 'Ady Endre utca 56.', 'Valami buli', '2024-03-07 09:42:57'),
-(2, 1, '2024-03-20', 'Kiss', 'Patrik', 'patrik@gmail.com', '234546547', '6922', 'Földeák', 'Szent László tér 18.', 'Nagyon jók a szolgáltatások', '2024-03-25 10:05:54'),
 (3, 3, '2024-03-20', 'Szabó', 'Lajos', 'szabo@gmail.com', '06302878726', '5544', 'Ózd', 'Orgona utca 6.', NULL, '2024-04-04 11:05:22'),
 (4, 1, '2024-03-20', 'Kiss', 'Jenő', 'kissamail@gmail.com', '06304958488', '6900', 'Makó', 'Alkotmány utca 2.', 'Nem szeretnénk légkondi közelében ülni.', '2024-04-05 16:18:37'),
 (5, 4, '2024-03-20', 'Kiss', 'Andrea', 'kissamail@gmail.com', '06302360141', '6900', 'Makó', 'Alkotmány utca 2.', 'Sokan leszünk.', '2024-04-07 07:40:51'),
@@ -320,7 +319,9 @@ ALTER TABLE `dishes`
 -- A tábla indexei `information`
 --
 ALTER TABLE `information`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `program_id` (`program_id`),
+  ADD KEY `type_id` (`type_id`);
 
 --
 -- A tábla indexei `programs`
@@ -357,7 +358,8 @@ ALTER TABLE `reservation_type`
 -- A tábla indexei `ticketreservation`
 --
 ALTER TABLE `ticketreservation`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `type_id` (`type_id`);
 
 --
 -- A tábla indexei `ticketreservation_type`
@@ -397,7 +399,7 @@ ALTER TABLE `promoters`
 -- AUTO_INCREMENT a táblához `registration`
 --
 ALTER TABLE `registration`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT a táblához `reservation`
@@ -422,10 +424,23 @@ ALTER TABLE `ticketreservation`
 --
 
 --
+-- Megkötések a táblához `information`
+--
+ALTER TABLE `information`
+  ADD CONSTRAINT `information_ibfk_1` FOREIGN KEY (`program_id`) REFERENCES `programs` (`id`),
+  ADD CONSTRAINT `information_ibfk_2` FOREIGN KEY (`type_id`) REFERENCES `ticketreservation_type` (`id`);
+
+--
 -- Megkötések a táblához `reservation`
 --
 ALTER TABLE `reservation`
   ADD CONSTRAINT `reservation_ibfk_1` FOREIGN KEY (`type_id`) REFERENCES `reservation_type` (`id`);
+
+--
+-- Megkötések a táblához `ticketreservation`
+--
+ALTER TABLE `ticketreservation`
+  ADD CONSTRAINT `ticketreservation_ibfk_1` FOREIGN KEY (`type_id`) REFERENCES `ticketreservation_type` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
